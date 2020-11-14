@@ -1,8 +1,12 @@
 .product-card-mini {
   border: 1px solid $text-color;
   border-radius: 10px;
-  padding: 40px;
   background-color: $white;
+}
+
+.product-card-mini__url {
+  display: block;
+  padding: 37px;
 }
 
 .product-card-mini__2-cols-box {

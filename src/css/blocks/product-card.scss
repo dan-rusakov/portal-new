@@ -1,8 +1,11 @@
 .product-card {
   border: 1px solid $text-color;
-  padding: 37px;
   background-color: $white;
   border-radius: 10px;
+}
+
+.product-card__url {
+  padding: 37px;
   display: flex;
 }
 
