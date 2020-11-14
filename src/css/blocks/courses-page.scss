@@ -1,0 +1,89 @@
+.courses-page {
+  margin-bottom: 100px;
+}
+
+.courses-page__inner {
+  @include inner;
+}
+
+.courses-page__title {
+  font-family: $font-family-base;
+  font-size: 52px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $extra-bold;
+  margin: 20px 0 25px;
+}
+
+.courses-page__content {
+  width: 100%;
+  border-top: 1px solid $text-color;
+  padding-top: 35px;
+}
+
+.courses-page__content {
+  display: flex;
+}
+
+.courses-page__aside {
+  width: 250px;
+  margin-right: 50px;
+}
+
+.courses-page__aside-menu-title {
+  font-family: $font-family-base;
+  font-size: 20px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 25px;
+}
+
+.courses-page__aside-menu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.courses-page__aside-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.courses-page__aside-menu-url {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  background-color: $white;
+  padding: 15px 23px;
+  border-radius: 40px;
+  border: 1px solid $brand-color;
+  display: flex;
+  align-items: center;
+}
+
+.courses-page__aside-menu-number {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $gray;
+  font-weight: $regular;
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid $gray;
+}
+
+.courses-page__courses-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 20px;
+}
