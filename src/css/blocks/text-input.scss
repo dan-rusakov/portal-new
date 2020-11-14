@@ -1,0 +1,15 @@
+.text-input {
+  border: none;
+  border-bottom: 1px solid $gray;
+  font-family: $font-family-base;
+  font-size: 20px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  padding: 14px 0;
+  outline: none;
+
+  &::placeholder {
+    color: $gray;
+  }
+}

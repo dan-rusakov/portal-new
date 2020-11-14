@@ -1,0 +1,24 @@
+.reviews {
+  margin-bottom: 120px;
+}
+
+.reviews__inner {
+  @include inner;
+  flex-direction: column;
+}
+
+.reviews__title {
+  font-family: $font-family-base;
+  font-size: 52px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $extra-bold;
+  margin: 0 0 30px;
+}
+
+.reviews__reviews-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 20px;
+}

@@ -1,0 +1,41 @@
+.categories__inner {
+  @include inner;
+  flex-direction: column;
+}
+
+.categories__title {
+  font-family: $font-family-base;
+  font-size: 20px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 24px;
+}
+
+.categories__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.categories__item {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.categories__url {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  padding: 15px 23px;
+  border: 1px solid $brand-color;
+  border-radius: 50px;
+  display: block;
+}

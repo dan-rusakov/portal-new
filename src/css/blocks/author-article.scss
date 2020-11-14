@@ -1,0 +1,66 @@
+.author-article {
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  background-color: $white;
+}
+
+.author-article__url {
+  display: block;
+  padding: 24px 80px 40px 30px;
+}
+
+.author-article__author-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.author-article__author-img-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 23px;
+}
+
+.author-article__author-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-article__author-name {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 12px;
+}
+
+.author-article__publish-date {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: $font-line-height-base;
+  color: $gray;
+  font-weight: $regular;
+  display: block;
+  margin: 0;
+}
+
+.author-article__article-name {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: $font-line-height-base;
+  color: $purple;
+  font-weight: $bold;
+  margin: 0 0 15px 70px;
+}
+
+.author-article__description {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 0 70px;
+}

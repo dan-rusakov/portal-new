@@ -1,0 +1,46 @@
+.articles-section {
+  margin-bottom: 110px;
+}
+
+.articles-section__inner {
+  @include inner;
+  flex-direction: column;
+}
+
+.articles-section__articles-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 20px;
+  margin-bottom: 35px;
+}
+
+.articles-section__title {
+  font-family: $font-family-base;
+  font-size: 48px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $bold;
+  margin: 0 0 40px;
+}
+
+.articles-section__page-url {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.4;
+  color: $text-color;
+  font-weight: $regular;
+  display: block;
+  border-bottom: 1px solid $purple;
+  position: relative;
+  margin-right: 54px;
+  margin-left: auto;
+}
+
+.articles-section__page-url-icon {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translate(100%, -50%);
+  fill: $purple;
+  vertical-align: middle;
+}

@@ -1,0 +1,121 @@
+.header {
+  padding: 20px 0;
+  background-color: $white;
+}
+
+.header__inner {
+  @include inner;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header__logo-url {
+  display: block;
+  margin-right: 30px;
+}
+
+.header__logo {
+  width: 80px;
+  height: auto;
+}
+
+.header__licence {
+  display: block;
+  background-color: transparent;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $brand-color;
+  font-weight: $regular;
+  margin-right: 30px;
+}
+
+.header__navigation {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header__dropdown {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  padding: 15px 23px;
+  border: 1px solid $brand-color;
+  border-radius: 50px;
+  position: relative;
+  margin-right: 70px;
+}
+
+.header__dropdown-icon {
+  fill: $brand-color;
+  vertical-align: middle;
+}
+
+.header__dropdown-list {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transform: translateY(100%);
+  padding: 15px 23px;
+  margin: 0;
+  list-style-type: none;
+  background-color: $white;
+  border-radius: 12px;
+}
+
+.header__dropdown-item {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.header__dropdown-url {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+}
+
+.header__menu {
+  padding: 0;
+  margin: 0 70px 0 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-item {
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header__menu-item {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+}
+
+.header__login-btn {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+}
+
+.header__login-icon {
+  fill: $text-color;
+  margin-right: 10px;
+  vertical-align: middle;
+}
