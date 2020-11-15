@@ -1,0 +1,89 @@
+.contacts {
+  margin: 25px 0 90px;
+}
+
+.contacts__inner {
+  @include inner;
+}
+
+.contacts__card {
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  display: flex;
+  min-height: 530px;
+  width: 100%;
+}
+
+.contacts__map {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.contacts__content-box {
+  padding: 70px 90px 60px;
+  background-color: $white;
+}
+
+.contacts__title {
+  font-family: $font-family-base;
+  font-size: 44px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $medium;
+  margin: 0 0 50px;
+}
+
+.contacts__contacts-list {
+  padding: 0;
+  margin: 0 0 30px;
+  list-style-type: none;
+}
+
+.contacts__contacts-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contacts__contacts-icon {
+  fill: $brand-color;
+  margin-right: 15px;
+}
+
+.contacts__contacts-text {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+}
+
+.contacts__text {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 35px;
+}
+
+.contacts__soc-box {
+  display: flex;
+}
+
+.contacts__soc-box-url {
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.contacts__soc-box-icon {
+  display: block;
+  fill: $brand-color;
+}
