@@ -1,0 +1,33 @@
+.article-card {
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  background-color: $white;
+  padding: 40px 80px 45px;
+}
+
+.article-card__title {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $bold;
+  margin: 0 0 10px;
+}
+
+.article-card__text {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 5px;
+}
+
+.article-card__category {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.35;
+  color: $brand-color;
+  font-weight: $regular;
+  margin: 0;
+}
