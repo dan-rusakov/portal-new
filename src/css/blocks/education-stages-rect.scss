@@ -1,0 +1,11 @@
+.education-stages-rect {
+  margin-bottom: 100px;
+}
+
+.education-stages-rect__inner {
+  @include inner;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px 20px;
+  align-items: stretch;
+}

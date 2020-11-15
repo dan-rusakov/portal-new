@@ -1,0 +1,17 @@
+.course-teacher {
+  margin-bottom: 170px;
+}
+
+.course-teacher__inner {
+  @include inner;
+  flex-direction: column;
+}
+
+.course-teacher__title {
+  font-family: $font-family-base;
+  font-size: 52px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $extra-bold;
+  margin: 0 0 35px;
+}

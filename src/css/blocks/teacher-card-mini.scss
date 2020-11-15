@@ -1,0 +1,55 @@
+.teacher-card-mini {
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  min-height: 400px;
+}
+
+.teacher-card-mini__img-box {
+  width: 32%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.teacher-card-mini__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.teacher-card-mini__text-box {
+  padding: 40px 80px 60px 60px;
+}
+
+.teacher-card-mini__name {
+  display: inline-block;
+  font-family: $font-family-base;
+  font-size: 44px;
+  line-height: 1.4;
+  color: $text-color;
+  font-weight: $medium;
+  border-bottom: 1px solid $text-color;
+  padding-bottom: 15px;
+  margin: 0 0 30px;
+}
+
+.teacher-card-mini__profession {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $purple;
+  font-weight: $regular;
+  margin: 0 0 30px;
+  max-width: 270px;
+}
+
+.teacher-card-mini__description {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0;
+}

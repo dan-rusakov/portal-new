@@ -1,0 +1,26 @@
+.advantage-card {
+  margin-right: 95px;
+  display: flex;
+  flex-direction: column;
+}
+
+.advantage-card__img  {
+  margin-bottom: 30px;
+}
+
+.advantage-card__title {
+  font-family: $font-family-base;
+  font-size: 20px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $medium;
+  margin: auto 0 24px;
+}
+
+.advantage-card__text {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+}

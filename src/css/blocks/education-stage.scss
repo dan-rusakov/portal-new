@@ -1,0 +1,42 @@
+.education-stage {
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.education-stage__img-box {
+  width: 100%;
+  height: 160px;
+  position: relative;
+}
+
+.education-stage__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.education-stage__text-box {
+  padding: 44px 34px 32px;
+}
+
+.education-stage__title {
+  font-family: $font-family-base;
+  font-size: 20px;
+  line-height: 1.25;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 18px;
+}
+
+.education-stage__text {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0;
+}
