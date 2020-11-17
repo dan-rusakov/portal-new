@@ -6,7 +6,7 @@
     "node": true
   },
   "rules": {
-
+    "no-undef": 0
   },
   "extends": ["eslint:recommended"]
 }

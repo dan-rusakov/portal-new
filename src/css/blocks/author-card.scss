@@ -1,0 +1,45 @@
+.author-card {
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  background-color: $white;
+  display: flex;
+}
+
+.author-card__url {
+  overflow: hidden;
+}
+
+.author-card__img-box {
+  width: 100%;
+  height: 185px;
+  position: relative;
+}
+
+.author-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-card__text-box {
+  padding: 26px 34px 38px;
+}
+
+.author-card__name {
+  display: block;
+  font-family: $font-family-base;
+  font-size: 20px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0 0 10px;
+}
+
+.author-card__text {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0;
+}

@@ -55,6 +55,7 @@ function css() {
 function libs() {
   return src([
     './node_modules/focus-visible/dist/focus-visible.min.js',
+    './node_modules/swiper/swiper-bundle.js',
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

@@ -1,0 +1,51 @@
+.certificates {
+  background-color: $brand-color;
+  background-image: url("./../img/figures-bg.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 70px 0 100px;
+}
+
+.certificates__inner {
+  @include inner;
+}
+
+.certificates__gallery {
+  width: 100%;
+  position: relative;
+
+  .swiper-container {
+    width: 100%;
+    height: 384px;
+  }
+}
+
+.certificates__title {
+  font-family: $font-family-base;
+  font-size: 48px;
+  line-height: $font-line-height-base;
+  color: $white;
+  font-weight: $extra-bold;
+  margin: 0 0 40px;
+}
+
+.certificates__gallery-btn {
+  position: absolute;
+  top: 50%;
+
+  &--prev {
+    left: -102px;
+    transform: translateY(-50%);
+  }
+
+  &--next {
+    right: -102px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.certificates__gallery-icon {
+  display: block;
+  fill: #96C4C1;
+}

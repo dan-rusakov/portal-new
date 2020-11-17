@@ -4,6 +4,10 @@
 @import "mixins";
 @import "base";
 
+// Libs
+@import "../../node_modules/swiper/swiper";
+
+// Blocks
 @import "blocks/general";
 @import "blocks/header";
 @import "blocks/welcome-section";
@@ -36,3 +40,7 @@
 @import "blocks/contacts";
 @import "blocks/articles";
 @import "blocks/article-card";
+@import "blocks/about";
+@import "blocks/certificates";
+@import "blocks/authors-section";
+@import "blocks/author-card";
