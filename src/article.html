@@ -59,44 +59,72 @@
         </nav>
     </div>
 </header>
-<section class="welcome-section" style="background-image: url('./img/welcome-section-img.jpg')"></section>
-<section class="articles">
-    <div class="articles__inner">
-        <h1 class="articles__title">Статьи</h1>
-    </div>
-    <div class="categories__inner">
-        <h3 class="categories__title">Наши направления:</h3>
-        <ul class="categories__list">
-            <li class="categories__item">
-                <a href="#!" class="categories__url">Программирование</a>
-            </li>
-            <li class="categories__item">
-                <a href="#!" class="categories__url" style="border-color: #5F5BAB;">Дизайн</a>
-            </li>
-            <li class="categories__item">
-                <a href="#!" class="categories__url" style="border-color: #3879C5;">Маркетинг</a>
-            </li>
-        </ul>
-    </div>
-    <div class="articles__content-inner">
-        <article class="article-card">
-            <a href="#!" class="article-card__url">
-                <h4 class="article-card__title">Как выбрать курс и сэкономить время</h4>
-                <p class="article-card__text">
-                    Сегодня в нашем университете обучились уже более 34 000 человек по четырем направлениям: программированию, дизайну, маркетингу и управлению.
+<section class="article__author-card">
+    <div class="article__author-card-inner">
+        <article class="author-big-card">
+            <div class="author-big-card__img-box">
+                <img src="./img/teacher-card-mini-img.jpg" alt="" class="author-big-card__img">
+            </div>
+            <div class="author-big-card__text-box">
+                <h1 class="author-big-card__title">Легостаева Екатерина Сергеевна</h1>
+                <p class="author-big-card__description">
+                    Кандидат психологических наук, доцент, специалист в сфере эмоций, эмоционального интеллекта, возрастных и гендерных различий. Практикующий психолог-консультант, арт-терапевт, коуч, ведущий обучающих курсов. Сертифицированный транзакционный аналитик, мифотерапевт.
                 </p>
-                <p class="article-card__category">#дизайн</p>
-            </a>
+            </div>
         </article>
-        <article class="article-card">
-            <a href="#!" class="article-card__url">
-                <h4 class="article-card__title">Как выбрать курс и сэкономить время</h4>
-                <p class="article-card__text">
-                    Сегодня в нашем университете обучились уже более 34 000 человек по четырем направлениям: программированию, дизайну, маркетингу и управлению.
-                </p>
-                <p class="article-card__category">#дизайн</p>
-            </a>
-        </article>
+    </div>
+</section>
+<section class="article__content">
+    <div class="article__content-inner">
+        <div class="article__content-box text-constructor">
+            <h1>О нашем проекте</h1>
+            <p>Наш проект - это интернет-портал, состоящий из:</p>
+            <ul>
+                <li>Обучение проходит без отрыва от рабочего процесса.</li>
+                <li>Стоимость участия ниже по сравнению с очным семинаром.</li>
+            </ul>
+            <h2>Преимущества дистанционного (электронного) обучения в УЦ «Толиман»:</h2>
+            <p>Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платёжный шлюз ПАО СБЕРБАНК. Соединение с платёжным шлюзом и передача информации осуществляется в защищённом режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept, J-Secure для проведения платежа также может потребоваться ввод специального пароля.</p>
+            <p class="gray">
+                Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК. Введённая информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платёжных систем МИР, Visa Int., MasterCard Europe Sprl, JCB.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="certificates">
+    <div class="certificates__inner">
+        <h2 class="certificates__title">Сертификаты</h2>
+        <div class="certificates__gallery js--certificates-gallery">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/certificates-img1.jpg" alt="" class="certificates__img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/certificates-img2.jpg" alt="" class="certificates__img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/certificates-img1.jpg" alt="" class="certificates__img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/certificates-img1.jpg" alt="" class="certificates__img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/certificates-img1.jpg" alt="" class="certificates__img">
+                    </div>
+                </div>
+            </div>
+            <button class="certificates__gallery-btn certificates__gallery-btn--prev">
+                <svg class="certificates__gallery-icon" width="67" height="24">
+                    <use xlink:href="#icon-gallery-arrow"></use>
+                </svg>
+            </button>
+            <button class="certificates__gallery-btn certificates__gallery-btn--next">
+                <svg class="certificates__gallery-icon" width="67" height="24">
+                    <use xlink:href="#icon-gallery-arrow"></use>
+                </svg>
+            </button>
+        </div>
     </div>
 </section>
 <footer class="footer">

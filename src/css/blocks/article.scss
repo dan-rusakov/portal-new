@@ -1,0 +1,15 @@
+.article__author-card {
+  margin: 25px 0 80px;
+}
+
+.article__author-card-inner {
+  @include inner;
+}
+
+.article__content {
+  margin-bottom: 80px;
+}
+
+.article__content-inner {
+  @include inner;
+}
