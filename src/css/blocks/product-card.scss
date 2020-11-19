@@ -55,3 +55,11 @@
   color: $text-color;
   font-weight: $regular;
 }
+
+.product-card__status {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.6;
+  color: $gray;
+  font-weight: $bold;
+}
