@@ -1,0 +1,71 @@
+.profile__inner {
+  @include inner;
+  border-top: 1px solid $text-color;
+  padding-top: 60px;
+  flex-wrap: nowrap;
+}
+
+.profile__aside {
+  width: 280px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: $white;
+  align-self: flex-start;
+  padding: 36px 33px 50px 33px;
+}
+
+.profile__user-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.profile__user-img-box {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  margin-right: 12px;
+}
+
+.profile__user-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile__menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.profile__menu-item {
+  margin-bottom: 15px;
+  display: flex;
+  align-self: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.profile__menu-icon {
+  fill: $text-color;
+  margin-right: 12px;
+}
+
+.profile__menu-url {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.3;
+  color: $text-color;
+  margin: 0;
+  font-weight: $regular;
+}
+
+.profile__content {
+  width: 100%;
+}

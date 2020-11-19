@@ -19,6 +19,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .author-card__text-box {
@@ -42,4 +43,32 @@
   color: $text-color;
   font-weight: $regular;
   margin: 0;
+}
+
+.author-card__action-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+}
+
+.author-card__price {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0;
+}
+
+.author-card__btn {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0;
+  padding: 9px 24px;
+  border: 1px solid $text-color;
+  border-radius: 50px;
 }
