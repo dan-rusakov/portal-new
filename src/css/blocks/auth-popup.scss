@@ -1,0 +1,133 @@
+.auth-popup-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($text-color, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s opacity ease, .25s visibility ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.auth-popup {
+  width: 620px;
+  max-width: 100%;
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  background-color: $white;
+  padding: 0 50px;
+}
+
+.auth-popup__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.auth-popup__header-btn {
+  width: 50%;
+  font-family: $font-family-base;
+  font-size: 24px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $extra-bold;
+  padding: 24px 0;
+  text-align: center;
+  transition: .25s color ease;
+
+  &.active {
+    color: $purple;
+  }
+}
+
+.auth-popup__registration-form {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+  &.active {
+    display: grid;
+  }
+}
+
+.auth-popup__description {
+  grid-column: 1/3;
+}
+
+.auth-popup__policy-text {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.35;
+  color: $gray;
+  font-weight: $regular;
+  margin: 0;
+}
+
+.auth-popup__submit-btn {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: $font-line-height-base;
+  color: $white;
+  font-weight: $regular;
+  padding: 13px 32px;
+  border: 1px solid $brand-color;
+  border-radius: 40px;
+  background-color: $brand-color;
+  text-align: center;
+  justify-self: start;
+  align-self: start;
+  min-width: 140px;
+}
+
+.auth-popup__forgot-password-btn {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $regular;
+  margin: 0;
+}
+
+.auth-popup__login-form {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  display: none;
+
+  &.active {
+    display: grid;
+  }
+}
+
+.auth-popup__footer {
+  border-top: 1px solid $gray;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.auth-popup__footer-text {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.35;
+  color: $text-color;
+  font-weight: $regular;
+}
+
+.auth-popup__login-by-social-url {
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 1.35;
+  color: $purple;
+  font-weight: $extra-bold;
+  margin: 0 0 0 8px;
+}

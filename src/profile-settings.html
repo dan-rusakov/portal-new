@@ -50,7 +50,7 @@
                     <a href="#!" class="header__menu-item">Контакты</a>
                 </li>
             </ul>
-            <button class="header__login-btn" type="button">
+            <button class="header__login-btn js--auth-popup-btn" type="button">
                 <svg class="header__login-icon" width="24" height="24">
                     <use xlink:href="#icon-enter"></use>
                 </svg>
@@ -201,8 +201,49 @@
         </div>
     </div>
 </footer>
-    <!-- inject:js -->
-    <!-- endinject -->
+<div class="auth-popup-wrapper js--auth-popup">
+    <div class="auth-popup js--auth-popup-box">
+        <header class="auth-popup__header">
+            <button class="auth-popup__header-btn js--registration-form-btn">Регистрация</button>
+            <button class="auth-popup__header-btn active  js--login-form-btn">Вход</button>
+        </header>
+        <form action="#!" method="post" class="auth-popup__registration-form js--registration-form">
+            <p class="auth-popup__description">Для регистрации, пожалуйста, заполните форму:</p>
+            <input type="text" class="text-input auth-popup__input" placeholder="Логин">
+            <input type="text" class="text-input auth-popup__input" placeholder="Имя и фамилия">
+            <input type="text" class="text-input auth-popup__input" placeholder="Телефон">
+            <input type="text" class="text-input auth-popup__input" placeholder="Почта">
+            <p class="auth-popup__policy-text">Нажимая на кнопку, я даю согласие на обработку моих персональных данных</p>
+            <button class="auth-popup__submit-btn" type="submit">Зарегистрироваться</button>
+        </form>
+        <form action="#!" method="post" class="auth-popup__login-form active js--login-form">
+            <p class="auth-popup__description">Войдите, чтобы продолжить обучение:</p>
+            <input type="text" class="text-input auth-popup__input" placeholder="Логин">
+            <input type="text" class="text-input auth-popup__input" placeholder="Пароль">
+            <button class="auth-popup__forgot-password-btn js--restore-password-popup-btn" type="button">
+                Я не помню пароль
+            </button>
+            <button class="auth-popup__submit-btn" type="submit">Войти</button>
+        </form>
+        <footer class="auth-popup__footer">
+            <p class="auth-popup__footer-text">
+                Вы можете войти через соцсети:
+                <a href="#!" class="auth-popup__login-by-social-url">Vk</a>
+                <a href="#!" class="auth-popup__login-by-social-url">Facebook</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<div class="restore-password-popup-wrapper js--restore-password-popup">
+    <div class="restore-password-popup js--restore-password-popup-box">
+        <h4 class="restore-password-popup__title">Восстановление пароля</h4>
+        <p class="restore-password-popup__text">Введите свою почту или номер телефона, и мы вышлем вам ссылку на восстановление доступа</p>
+        <form action="#!" method="post" class="restore-password-popup__form">
+            <input type="text" class="text-input restore-password-popup__input" placeholder="Почта">
+            <button class="restore-password-popup__submit-btn" type="submit">Войти</button>
+        </form>
+    </div>
+</div>
     <svg style="display: none;">
         <defs>
             <symbol id="icon-arrow" viewBox="0 0 12 12"><polygon points="6 8.21 2.15 4.35 2.85 3.65 6 6.79 9.15 3.65 9.85 4.35 6 8.21" /></symbol>
@@ -224,5 +265,7 @@
             <symbol id="icon-package" viewBox="0 0 20 20"><path d="M13.33,5V3.33a3.33,3.33,0,1,0-6.66,0V5H2.5V20h15V5ZM7.5,3.33a2.5,2.5,0,0,1,5,0V5h-5Zm8.33,15H4.17V6.67h2.5V7.92a.41.41,0,0,0,.41.41.41.41,0,0,0,.42-.41V6.67h5V7.92a.41.41,0,0,0,.42.41.41.41,0,0,0,.41-.41V6.67h2.5Z"/></symbol>
         </defs>
     </svg>
+<!-- inject:js -->
+<!-- endinject -->
 </body>
 </html>
