@@ -1,5 +1,6 @@
 if (document.querySelector('.js--auth-popup')) {
-  const authPopupBtn = document.querySelector('.js--auth-popup-btn');
+  const authPopupBtn = document.querySelectorAll('.js--auth-popup-btn');
+  const registerPopupBtn = document.querySelectorAll('.js--register-popup-btn');
   const authPopup = document.querySelector('.js--auth-popup');
   const registrationFormBtn = document.querySelector('.js--registration-form-btn');
   const registrationForm = document.querySelector('.js--registration-form');
@@ -22,8 +23,24 @@ if (document.querySelector('.js--auth-popup')) {
     loginForm.classList.add('active');
   });
 
-  authPopupBtn.addEventListener('click', () => {
-    authPopup.classList.add('active');
+  Array.from(authPopupBtn).forEach(btn => {
+    btn.addEventListener('click', () => {
+      authPopup.classList.add('active');
+      registrationFormBtn.classList.remove('active');
+      registrationForm.classList.remove('active');
+      loginFormBtn.classList.add('active');
+      loginForm.classList.add('active');
+    });
+  });
+
+  Array.from(registerPopupBtn).forEach(btn => {
+    btn.addEventListener('click', () => {
+      authPopup.classList.add('active');
+      registrationFormBtn.classList.add('active');
+      registrationForm.classList.add('active');
+      loginFormBtn.classList.remove('active');
+      loginForm.classList.remove('active');
+    });
   });
 
   authPopup.addEventListener('click', (evt) => {

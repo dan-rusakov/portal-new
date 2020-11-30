@@ -56,6 +56,7 @@ function libs() {
   return src([
     './node_modules/focus-visible/dist/focus-visible.min.js',
     './node_modules/swiper/swiper-bundle.js',
+    './node_modules/lightgallery.js/dist/js/lightgallery.min.js',
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -78,7 +79,11 @@ function js() {
 }
 
 function bundleJs() {
-  return src('./src/libs/**/*.js')
+  return src([
+    './node_modules/focus-visible/dist/focus-visible.min.js',
+    './node_modules/swiper/swiper-bundle.js',
+    './node_modules/lightgallery.js/dist/js/lightgallery.min.js',
+  ])
     .pipe(src('./src/js/*.js'))
     .pipe(babel())
     .pipe(uglify())

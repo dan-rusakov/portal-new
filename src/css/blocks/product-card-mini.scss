@@ -2,6 +2,27 @@
   border: 1px solid $text-color;
   border-radius: 10px;
   background-color: $white;
+  transition: .25s background-color ease;
+
+  &:hover {
+    background-color: $brand-color;
+
+    .product-card-mini__time {
+      color: $white;
+    }
+
+    .product-card-mini__author {
+      color: $white;
+    }
+
+    .product-card-mini__category {
+      color: $white;
+    }
+
+    .product-card-mini__title {
+      color: $white;
+    }
+  }
 }
 
 .product-card-mini__url {
@@ -21,14 +42,29 @@
   margin-right: 20px;
 }
 
+.product-card-mini__img-wrap {
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.product-card-mini__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .product-card-mini__time {
   font-family: $font-family-base;
   font-size: 14px;
   line-height: $font-line-height-base;
   color: $brand-color;
   font-weight: $regular;
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   display: block;
+  transition: .25s color ease;
 }
 
 .product-card-mini__author {
@@ -37,16 +73,18 @@
   line-height: 1.4;
   color: $text-color;
   font-weight: $regular;
-  margin: 0 0 4px;
+  margin: 0 0 6px;
+  transition: .25s color ease;
 }
 
 .product-card-mini__category {
   font-family: $font-family-base;
   font-size: 14px;
   line-height: $font-line-height-base;
-  color: $brand-color;
+  color: $purple;
   font-weight: $regular;
   margin: 0;
+  transition: .25s color ease;
 }
 
 .product-card-mini__title {
@@ -56,4 +94,5 @@
   color: $text-color;
   font-weight: $bold;
   margin: 0;
+  transition: .25s color ease;
 }

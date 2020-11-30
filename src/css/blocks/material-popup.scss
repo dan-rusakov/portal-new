@@ -1,0 +1,108 @@
+.material-popup-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($text-color, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s opacity ease, .25s visibility ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.material-popup {
+  width: 100%;
+  padding: 50px;
+}
+
+.material-popup__title {
+  margin: 0 0 30px;
+  color: $text-color;
+  font-weight: $bold;
+  font-size: 24px;
+  font-family: $font-family-base;
+  line-height: 1.35;
+}
+
+.material-popup__content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 0 0 35px;
+  padding: 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.material-popup__item {
+  margin-bottom: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d9d9d9;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.material-popup__material-title {
+  margin: 0 0 15px;
+  color: $text-color;
+  font-weight: $regular;
+  font-size: 20px;
+  font-family: $font-family-base;
+  line-height: 1.35;
+}
+
+.material-popup__material-text {
+  margin: 0 0 15px;
+  color: $text-color;
+  font-weight: $regular;
+  font-size: 14px;
+  font-family: $font-family-base;
+  line-height: 1.35;
+}
+
+.material-popup__download-btn {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.4;
+  color: $text-color;
+  font-weight: $regular;
+  display: inline-block;
+  border-bottom: 1px solid $brand-color;
+  position: relative;
+  margin-right: 54px;
+  margin-left: auto;
+}
+
+.material-popup__download-icon {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translate(100%, -50%);
+  fill: $brand-color;
+  vertical-align: middle;
+}
+
+.material-popup-box {
+  width: 620px;
+  max-width: 100%;
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  background-color: $white;
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+}

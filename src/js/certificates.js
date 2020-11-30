@@ -8,3 +8,10 @@ if (document.querySelector('.js--certificates-gallery')) {
     },
   });
 }
+
+if (document.querySelector('#lightgallery')) {
+  lightGallery(document.querySelector('#lightgallery'), {
+    loop: false,
+    download: false,
+  });
+}

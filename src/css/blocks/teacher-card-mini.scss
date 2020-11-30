@@ -4,6 +4,7 @@
   overflow: hidden;
   display: flex;
   min-height: 400px;
+  width: 100%;
 }
 
 .teacher-card-mini__img-box {
@@ -27,7 +28,7 @@
   display: inline-block;
   font-family: $font-family-base;
   font-size: 44px;
-  line-height: 1.4;
+  line-height: 1.2;
   color: $text-color;
   font-weight: $medium;
   border-bottom: 1px solid $text-color;

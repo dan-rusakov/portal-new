@@ -6,6 +6,7 @@
 
 // Libs
 @import "../../node_modules/swiper/swiper";
+@import "../../node_modules/lightgallery.js/dist/css/lightgallery.min";
 
 // Blocks
 @import "blocks/general";
@@ -53,3 +54,6 @@
 @import "blocks/profile-settings";
 @import "blocks/auth-popup";
 @import "blocks/restore-password-popup";
+@import "blocks/pagination";
+@import "blocks/material-popup";
+@import "blocks/lightgallery";

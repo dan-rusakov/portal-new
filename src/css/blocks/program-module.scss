@@ -1,6 +1,10 @@
 .program-module {
   width: 100%;
   border-top: 1px solid $text-color;
+}
+
+.program-module__header {
+  width: 100%;
   padding: 25px 0;
   display: flex;
   align-items: center;
@@ -22,6 +26,15 @@
   border-radius: 40px;
   position: relative;
   margin-left: auto;
+
+  &.active {
+    background-color: $purple;
+
+    .program-module__add-icon {
+      fill: $white;
+      transform: rotate(45deg) translate(-70%, 0%);
+    }
+  }
 }
 
 .program-module__add-icon {
@@ -31,4 +44,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.program-module__text {
+  margin: 0;
+  padding-bottom: 25px;
+  color: $text-color;
+  font-weight: $regular;
+  font-size: 18px;
+  font-family: $font-family-base;
+  line-height: 1.35;
+}
+
+.program-module__content {
+  height: 0;
+  overflow: hidden;
+
+  &.active {
+    height: auto;
+    overflow: visible;
+  }
 }

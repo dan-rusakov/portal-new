@@ -109,7 +109,7 @@
                 <h2 class="profile-materials__subtitle">Ваши курсы</h2>
                 <div class="profile-materials__materials-box">
                     <article class="product-card">
-                        <a href="#!" class="product-card__url">
+                        <a data-material-popup-btn href="#material-popup-1" class="product-card__url">
                             <div class="product-card__img-box">
                                 <div class="product-card__img-wrap">
                                     <img src="./img/product-card-img.jpg" alt="" class="product-card__img">
@@ -123,7 +123,7 @@
                         </a>
                     </article>
                     <article class="product-card">
-                        <a href="#!" class="product-card__url">
+                        <a data-material-popup-btn href="#material-popup-2" class="product-card__url">
                             <div class="product-card__img-box">
                                 <div class="product-card__img-wrap">
                                     <img src="./img/product-card-img.jpg" alt="" class="product-card__img">
@@ -170,6 +170,61 @@
         </div>
     </div>
 </section>
+
+<div class="material-popup-wrapper js--material-popup" id="material-popup-1">
+    <div class="material-popup-box">
+        <div class="material-popup">
+            <h4 class="material-popup__title">Материалы</h4>
+            <ul class="material-popup__content">
+                <li class="material-popup__item">
+                    <h5 class="material-popup__material-title">Курс с длинным названием</h5>
+                    <p class="material-popup__material-text">Адвокат Коллегии адвокатов "Свердловская областная гильдия адвокатов" Член Совета молодых адвокатов Адвокатской палаты </p>
+                    <a href="#!" class="material-popup__download-btn">
+                        Скачать
+                        <svg class="material-popup__download-icon" width="42" height="8">
+                            <use xlink:href="#icon-arrow-long"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="material-popup-wrapper js--material-popup" id="material-popup-2">
+    <div class="material-popup-box">
+        <div class="material-popup">
+            <h4 class="material-popup__title">Материалы</h4>
+            <ul class="material-popup__content">
+                <li class="material-popup__item">
+                    <h5 class="material-popup__material-title">Курс с длинным названием</h5>
+                    <p class="material-popup__material-text">Адвокат Коллегии адвокатов "Свердловская областная гильдия адвокатов" Член Совета молодых адвокатов Адвокатской палаты </p>
+                    <a href="#!" class="material-popup__download-btn">
+                        Скачать
+                        <svg class="material-popup__download-icon" width="42" height="8">
+                            <use xlink:href="#icon-arrow-long"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <h4 class="material-popup__title">Дополнительные материалы</h4>
+            <ul class="material-popup__content">
+                <li class="material-popup__item">
+                    <h5 class="material-popup__material-title">Курс с длинным названием</h5>
+                    <p class="material-popup__material-text">Адвокат Коллегии адвокатов "Свердловская областная гильдия адвокатов" Член Совета молодых адвокатов Адвокатской палаты </p>
+                    <a href="#!" class="material-popup__download-btn">
+                        Скачать
+                        <svg class="material-popup__download-icon" width="42" height="8">
+                            <use xlink:href="#icon-arrow-long"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
 <footer class="footer">
     <div class="footer__inner">
         <form action="#!" method="post" class="footer__subscribe-form">

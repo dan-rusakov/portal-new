@@ -25,6 +25,19 @@
     }
   }
 
+  div {
+    font-family: $font-family-base;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $text-color;
+    font-weight: $regular;
+    margin: 0 0 30px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
   .gray {
     font-family: $font-family-base;
     font-size: 14px;

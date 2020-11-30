@@ -2,6 +2,23 @@
   border: 1px solid $text-color;
   background-color: $white;
   border-radius: 10px;
+  transition: .25s background-color ease;
+
+  &:hover:not(.product-card--not-hover) {
+    background-color: $brand-color;
+
+    .product-card__date {
+      color: $white;
+    }
+
+    .product-card__title {
+      color: $white;
+    }
+
+    .product-card__author {
+      color: $white;
+    }
+  }
 }
 
 .product-card__url {
@@ -12,6 +29,7 @@
 .product-card__img-box {
   margin-right: 35px;
   width: 36%;
+  flex-shrink: 0;
 }
 
 .product-card__img-wrap {
@@ -37,6 +55,7 @@
   font-weight: $regular;
   margin: 0 0 12px;
   display: block;
+  transition: .25s color ease;
 }
 
 .product-card__title {
@@ -46,6 +65,7 @@
   color: $text-color;
   font-weight: $bold;
   margin: 0 0 15px;
+  transition: .25s color ease;
 }
 
 .product-card__author {
@@ -54,6 +74,7 @@
   line-height: 1.6;
   color: $text-color;
   font-weight: $regular;
+  transition: .25s color ease;
 }
 
 .product-card__status {
@@ -62,4 +83,5 @@
   line-height: 1.6;
   color: $gray;
   font-weight: $bold;
+  transition: .25s color ease;
 }

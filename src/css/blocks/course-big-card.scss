@@ -51,15 +51,13 @@
   line-height: $font-line-height-base;
   color: $brand-color;
   font-weight: $regular;
-  margin: 0 0 0 20px;
-  padding-left: 20px;
-  border-left: 1px solid $brand-color;
+  margin: 0;
 }
 
 .course-big-card__title {
   font-family: $font-family-base;
   font-size: 44px;
-  line-height: $font-line-height-base;
+  line-height: 1.15;
   color: $text-color;
   font-weight: $medium;
   margin: 0 0 35px;

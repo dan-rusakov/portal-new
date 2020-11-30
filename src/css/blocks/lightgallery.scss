@@ -1,0 +1,11 @@
+.lg-backdrop {
+  background-color: rgba($black, 0.8);
+}
+
+.lg-toolbar {
+  background-color: initial;
+}
+
+.lg-actions .lg-next, .lg-actions .lg-prev, .lg-toolbar .lg-icon {
+  color: $white;
+}

@@ -62,6 +62,19 @@
   border-radius: 40px;
 }
 
+.profile-cart__confirm-btn {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  background-color: $white;
+  font-weight: $regular;
+  padding: 15px 40px;
+  border: 1px solid $brand-color;
+  border-radius: 40px;
+  margin-right: 20px;
+}
+
 .profile-cart__submit-box {
   margin-bottom: 65px;
 }

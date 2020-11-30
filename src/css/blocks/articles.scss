@@ -17,8 +17,21 @@
 
 .articles__content-inner {
   @include inner;
+  align-items: stretch;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 20px;
   padding-top: 40px;
+}
+
+.articles__load-btn {
+  font-family: $font-family-base;
+  font-size: 18px;
+  line-height: $font-line-height-base;
+  color: $white;
+  font-weight: $regular;
+  padding: 18px 50px;
+  border-radius: 40px;
+  background-color: $brand-color;
+  justify-self: flex-start;
 }

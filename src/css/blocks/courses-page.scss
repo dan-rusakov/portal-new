@@ -28,6 +28,7 @@
 .courses-page__aside {
   width: 250px;
   margin-right: 50px;
+  flex-shrink: 0;
 }
 
 .courses-page__aside-menu-title {
@@ -56,18 +57,43 @@
   }
 }
 
+.courses-page__aside-menu-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .25s opacity ease;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 60px;
+}
+
+.courses-page__aside-menu-checkbox {
+  &:checked + .courses-page__aside-menu-url {
+    color: $white;
+
+    .courses-page__aside-menu-bg {
+      opacity: 1;
+    }
+  }
+}
+
 .courses-page__aside-menu-url {
   font-family: $font-family-base;
-  font-size: $font-size-base;
-  line-height: $font-line-height-base;
+  font-size: 14px;
+  line-height: 1.25;
   color: $text-color;
   font-weight: $regular;
-  background-color: $white;
-  padding: 15px 23px;
+  background-color: transparent;
+  padding: 13px 20px 11px;
   border-radius: 40px;
   border: 1px solid $brand-color;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transition: .25s color ease;
+  position: relative;
 }
 
 .courses-page__aside-menu-number {

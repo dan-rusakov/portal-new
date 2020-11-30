@@ -1,0 +1,31 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+}
+
+.pagination__item {
+  margin: 0 6px;
+  &.active {
+    border-bottom: 2px solid $brand-color;
+
+    .pagination__item-link {
+      color: $brand-color;
+    }
+  }
+}
+
+.pagination__item-link {
+  font-family: $font-family-base;
+  font-size: 22px;
+  line-height: $font-line-height-base;
+  color: $text-color;
+  font-weight: $medium;
+  margin: 0 6px;
+}
