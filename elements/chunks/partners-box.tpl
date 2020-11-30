@@ -1,0 +1,1 @@
+<div class="partners-box grid"><a href="{$ourPartners__img}"><img src="{$ourPartners__img}" alt="{$ourPartners__alt}" class="partners-box__img"></a></div>
