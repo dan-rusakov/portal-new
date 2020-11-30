@@ -1,1 +1,4 @@
-<div class="partners-box grid"><a href="{$ourPartners__img}"><img src="{$ourPartners__img}" alt="{$ourPartners__alt}" class="partners-box__img"></a></div>
+<a class="swiper-slide" href="{$ourPartners__img}">
+	<img src="{$ourPartners__img}" alt="" class="certificates__img">
+</a>
+	

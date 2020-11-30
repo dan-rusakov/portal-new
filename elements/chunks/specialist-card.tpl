@@ -1,6 +1,13 @@
-<div class="author-card grid">
-	<p class="author-card__name">{if $_modx->resource.specialistList}{$_modx->resource.specialistList}{else}{$pagetitle}{/if}</p>
-	<p class="author-card__profession">[[+tv.specialistProfession]]</p>
-	<p class="author-card__description">[[+introtext]]<br><a href="[[~[[+id]]]]" class="main-btn" style="margin-top: 20px;">Подробнее</a></p> 
-	<div class="author-card__img"><img src="[[+tv.specialistFullImg]]" alt="" class=" img-responsive"></div>
-</div>
+<article class="author-card">
+	<a href="[[~[[+id]]]]" class="author-card__url">
+		<div class="author-card__img-box">
+			<img src="[[+tv.specialistFullImg]]" alt="" class="author-card__img">
+		</div>
+		<div class="author-card__text-box">
+			<b class="author-card__name">{if $_modx->resource.specialistList}{$_modx->resource.specialistList}{else}{$pagetitle}{/if}</b>
+			<p class="author-card__text">
+				[[+introtext]]
+			</p>
+		</div>
+	</a>
+</article>

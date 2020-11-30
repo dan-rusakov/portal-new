@@ -2,25 +2,54 @@
 
 {block 'main'}
 <section class="contacts">
-    <div class="grid">
-        <div class="contacts__map">
-            <div id="contactMap" style="width: 100%; height: 100%"></div>
-        </div>
-        <div class="contacts__content">
-            <h2 class="contacts__title">Контакты</h2>
-            <ul class="contacts__list">
-                <li class="contacts__list-item grid"><i class="icon-form-email contacts__icon"></i><p class="contacts__list-text">{$_modx->resource.contactEmail}</p></li>
-                <li class="contacts__list-item grid"><i class="icon-form-phone contacts__icon"></i><p class="contacts__list-text">{$_modx->resource.contactPhone}</p></li>
-                <li class="contacts__list-item grid"><i class="icon-location-linear contacts__icon"></i><p class="contacts__list-text">{$_modx->resource.contactAdress}</p></li>
-            </ul>
-            <p class="contacts__text">{$_modx->resource.contactAttr}</p>
-            <div class="contacts__social-box">
-                <a href="{$_modx->resource.contactInst}" class="contacts__social-url"><img src="assets/img/instagram-blue-icon.png" alt="instagram" class="contacts__social-img"></a>
-                <a href="{$_modx->resource.contactVk}" class="contacts__social-url"><img src="assets/img/vk-blue-icon.png" alt="vk" class="contacts__social-img"></a>
-                <a href="{$_modx->resource.contactYoutube}" class="contacts__social-url"><img src="assets/img/youtube-blue-icon.png" alt="youtube" class="contacts__social-img"></a>
-            </div>
-        </div>
-    </div>
+	<div class="contacts__inner">
+		<article class="contacts__card">
+			<div class="contacts__map">
+				<div id="contactMap" style="width: 100%; height: 100%"></div>
+			</div>
+			<div class="contacts__content-box">
+				<h1 class="contacts__title">Контакты</h1>
+				<ul class="contacts__contacts-list">
+					<li class="contacts__contacts-item">
+						<svg class="contacts__contacts-icon" width="24" height="24">
+							<use xlink:href="#icon-email"></use>
+						</svg>
+						<p class="contacts__contacts-text">{$_modx->resource.contactEmail}</p>
+					</li>
+					<li class="contacts__contacts-item">
+						<svg class="contacts__contacts-icon" width="24" height="24">
+							<use xlink:href="#icon-phone"></use>
+						</svg>
+						<p class="contacts__contacts-text">{$_modx->resource.contactPhone}</p>
+					</li>
+					<li class="contacts__contacts-item">
+						<svg class="contacts__contacts-icon" width="24" height="24">
+							<use xlink:href="#icon-location"></use>
+						</svg>
+						<p class="contacts__contacts-text">{$_modx->resource.contactAdress}</p>
+					</li>
+				</ul>
+				<p class="contacts__text">{$_modx->resource.contactAttr}</p>
+				<div class="contacts__soc-box">
+					<a href="{$_modx->resource.contactInst}" class="contacts__soc-box-url" aria-label="Ссылка на instagram">
+						<svg class="contacts__soc-box-icon" width="40" height="40">
+							<use xlink:href="#icon-instagram"></use>
+						</svg>
+					</a>
+					<a href="{$_modx->resource.contactVk}" class="contacts__soc-box-url" aria-label="Ссылка на vk">
+						<svg class="contacts__soc-box-icon" width="40" height="40">
+							<use xlink:href="#icon-vk"></use>
+						</svg>
+					</a>
+					<a href="{$_modx->resource.contactYoutube}" class="contacts__soc-box-url" aria-label="Ссылка на YouTube">
+						<svg class="contacts__soc-box-icon" width="40" height="40">
+							<use xlink:href="#icon-youtube"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</article>
+	</div>
 </section>
 {/block}
 

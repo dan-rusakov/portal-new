@@ -1,11 +1,16 @@
-<div class="course-item grid" data-number="[[+MIGX_id]]">
-	<div class="course-item__content">
-		<p class="course-item__title">[[+serviceItem__name]]</p>
-		<p class="course-item__description">[[+serviceItem__description]]</p>
+<article class="module modules-section__module" data-number="[[+MIGX_id]]">
+	<div class="module__text-box">
+		<h4 class="module__title">[[+serviceItem__name]]</h4>
+		<p class="module__text">
+			[[+serviceItem__description]]
+		</p>
 	</div>
-	<div class="course-item__price-box">
-		<p class="course-item__price">[[+serviceItem__price]] Р</p>
-		<button type="button" class="course-item__url">Перейти к оплате</button>
+	<div class="module__action-box">
+		<strong class="module__price">[[+serviceItem__price]] Р</strong>
+		<label class="module__checkbox-label">
+			<p class="module__checkbox-text">Выбрать модуль</p>
+			<input type="checkbox" class="module__checkbox-input visually-hidden" data-price="[[+serviceItem__price]]" data-add="false">
+			<span class="module__checkbox"></span>
+		</label>
 	</div>
-	<input type="checkbox" class="course-item__input" data-price="[[+serviceItem__price]]" data-add="false">	
-</div>
+</article>

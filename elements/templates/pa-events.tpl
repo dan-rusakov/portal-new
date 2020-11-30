@@ -1,67 +1,64 @@
 {extends 'file:templates/pa-layout.tpl'}
 
 {block 'main'}
-<h1 class="pa-section-title">Ваше обучение</h1>
+<div class="profile-materials">
+		<h1 class="profile-materials__title">Доступные мероприятия</h1>
+		<h2 class="profile-materials__subtitle">Ваши мероприятия</h2>
+			{'!pdoPage' | snippet : [
+			'parents' => '17,18,19,6,145',
+			'element' => 'msProducts',
+			'tpl' => 'pa-materials-box',
+			'includeTVs' => 'addMaterials, specialistList, dateServicePage',
+			'tvPrefix' => 'tv.',
+			'limit' => '3',
+			'where' => '{"id:IN":['~$_modx->runSnippet('!getUsersOrders')~']}',
+			'optionFilters' => '{"services_type:=":"Мероприятие"}',
+			'toPlaceholder' => 'materials-plc',
+			'ajaxMode' => 'button',
+			'processTVs' => '1',
+			'ajaxElemWrapper' => '#pdopage',
+			'ajaxElemRows' => '#pdopage .rows',
+			'ajaxElemPagination' => '#pdopage .pagination',
+			'ajaxElemLink' => '#pdopage .pagination a',
+			'ajaxElemMore' => '#pdopage .more-btn',
+			'ajaxTplMore' => '@INLINE <div class="pa-materials__btn-box"><a class="more-btn pa-materials__btn">Показать еще</a></div>',
+			'pageNavVar' => 'page.nav',
+			'pageVarKey' => 'page'
+		]} 
+		{if $_modx->getPlaceholder('materials-plc')}
+			<div id="pdopage">
+				<div class="profile-materials__materials-box">
+					{$_modx->getPlaceholder('materials-plc')}
+				</div>
+				{$_modx->getPlaceholder('page.nav')}
+			</div>
+    {else}
+			<div class="pa-content-box" id="pdopage-rec">
+					<div class="rows pa-materials__materials-grid grid">
 
+					{'!pdoPage' | snippet : [
+							'parents' => '17,18,19,6,145',
+							'element' => 'msProducts',
+							'tpl' => 'pa-materials-recommended',
+							'includeTVs' => 'addMaterials, specialistList',
+							'tvPrefix' => 'tv.',
+							'limit' => '4',
+							'optionFilters' => '{"services_type:=":"Мероприятие"}',
+							'ajaxMode' => 'button',
+							'processTVs' => '1',
+							'ajaxElemWrapper' => '#pdopage-rec',
+							'ajaxElemRows' => '#pdopage-rec .rows',
+							'ajaxElemPagination' => '#pdopage-rec .pagination',
+							'ajaxElemLink' => '#pdopage-rec .pagination a',
+							'ajaxElemMore' => '#pdopage-rec .more-btn',
+							'ajaxTplMore' => '@INLINE <div class="pa-materials__btn-box"><a class="more-btn pa-materials__btn">Показать еще</a></div>',
+							'pageNavVar' => 'page-rec.nav',
+							'pageVarKey' => 'page-rec'
+					]} 
 
-{* {'!pa-events-ids' | chunk}
- {'!pdoPage' | snippet : [
-	'parents' => '0',
-	'element' => 'msProducts',
-	'tpl' => 'pa-materials-box',
-	'includeTVs' => 'dateServicePage',
-	'tvPrefix' => 'tv.',
-	'limit' => '999',
-	'resources' => ''~$_modx->getPlaceholder('materials-meetings-plc')~','~$_modx->getPlaceholder('materials-events-plc')~','~$_modx->getPlaceholder('materials-education-plc')~'',
-	'toPlaceholder' => 'events-plc',
-	'sortdir' => 'DESC'
-	'sortby' => 'dateServicePage'
-]} *}
-
-{'!pdoPage' | snippet : [
-	'parents' => '17,18,19,6,145',
-	'element' => 'msProducts',
-	'tpl' => 'pa-events-box',
-	'includeTVs' => 'dateServicePage',
-	'tvPrefix' => 'tv.',
-	'limit' => '999',
-	'optionFilters' => '{"services_type:=":"Мероприятие"}',
-	'toPlaceholder' => 'materials-plc',
-		'ajaxMode' => 'button',
-	'where' => '{"id:IN":['~$_modx->runSnippet("!getUsersOrders")~']}',
-	'toPlaceholder' => 'events-plc',
-	'sortby' => 'dateServicePage',
-]}
-
-
-
-	
-	{* 'optionFilters' => '{"services_radio":"Встреча","OR events_radio":"Вебинар"}', *}
-{if $_modx->getPlaceholder('events-plc')}
-	<div class="pa-content-box">{$_modx->getPlaceholder('events-plc')}</div>
-{else}
-	<div class="pa-materials__no-materials-box">
-			<p class="pa-materials__no-materials-text">Вы еще ничего не купили и не добавили. На нашем сайте Вы найдете множество полезных материалов: курсы, вебинары, обучение, интерактивы, встречи, книги, фильмы, а так же у нас можно заказать консультации психолога и юриста.</p>
-	</div>
-{/if} 
-
-<h3 class="pa-section-title">Недавно Вы смотрели:</h3>
-{'!looked' | snippet : [
-	'tpl' => 'looked-card',
-	'limit' => '4',
-	'includeTVs' => 'specialistList, dateServicePage',
-	'toPlaceholder' => 'looked-plc',
-]}
-{if $_modx->getPlaceholder('looked-plc')}
-	<div class="recently grid">
-		<div class="rows grid">
-			{$_modx->getPlaceholder('looked-plc')}
-		</div>
-	</div>
-{else}
-	<div class="pa-materials__no-materials-box">
-		<p class="pa-materials__no-materials-text">Вы еще ничего не смотрели. На нашем сайте Вы найдете множество полезных материалов: курсы, вебинары, обучение, интерактивы, встречи, книги, фильмы, а так же у нас можно заказать консультации психолога и юриста.</p>
-	</div>
-{/if}
-
+					</div>
+					{$_modx->getPlaceholder('page-rec.nav')}
+			</div>
+		{/if} 
+</div>
 {/block}

@@ -1,73 +1,63 @@
-<div class="pa-line-card grid">
-	<div class="pa-line-card__img-box pa-line-card__img-box_materials">
-		<img class="pa-line-card__img" src="{$image}" alt="">
-		{* <a data-fancybox href="{$_pls['tv.addMaterials']}" class="pa-line-card__video-url"><i class="icon-play-big pa-line-card__icon"></i></a>  *}
-		<a data-fancybox href="#material-box-{$id}" class="pa-line-card__video-url"><i class="icon-play-big pa-line-card__icon"></i></a> 
-		{if $id | resource : "serviceItem"}
-		<div style="display: none;" id="material-box-{$id}">
-			[[!displayMaterials? &materialId=`{$id}`]]
+<article class="product-card">
+	<a data-material-popup-btn href="#material-popup-{$id}"  class="product-card__url">
+		<div class="product-card__img-box">
+			<div class="product-card__img-wrap">
+				<img src="{$image}" alt="" class="product-card__img">
+			</div>
 		</div>
-		{else}
-		<div style="display: none;" id="material-box-{$id}">
-			Материалов нет
+		<div class="product-card__text-box">
+			{if $_pls['tv.dateServicePage']}
+			<time class="product-card__date">{$_pls['tv.dateServicePage'] | date_format: '%d %B %Y, %H:%M'}</time>
+			{/if}
+			<h4 class="product-card__title">{$pagetitle}</h4>
+			{if $_pls['tv.specialistList'] != '-- Выберите специалиста --'}
+			<p class="product-card__author">Автор - <br>{$_pls['tv.specialistList']}</p>
+			{/if}
 		</div>
-		{/if}
-	</div>
-	<div class="pa-line-card__text-box">
-		<p class="pa-line-card__title">{$pagetitle}{$orders}</p>
-		<p class="pa-line-card__text">{$introtext | truncate : 180 : '...' : true}</p>
-		<a data-fancybox data-src="#extra-material-content-{$id}" href="javascript:;" class="pa-line-card__extra-material">Дополнительные материалы</a>
-	</div>
-	<div class="pa-line-card__action-box">
-		<div class="pa-line-card__description-box pa-line-card__description-box_materials">
-		{if $_pls['tv.specialistList'] != '-- Выберите специалиста --'} 
-			{'!msProducts' | snippet : [
-					'parents' => '142',
-					'tpl' => '@INLINE: 	<div class="pa-line-card__specialist grid">
-										<div class="pa-line-card__specialist-img-box"><img src="{$image}" alt="" class="pa-line-card__specialist-img"></div>
-										<p class="pa-line-card__specialist-name">{$article}</p>
-										<p class="pa-line-card__specialist-profession">{$specialist_type.0}</p>
-									</div>',
-					'limit' => '1',
-					'where' => '{"pagetitle":"'~$_pls['tv.specialistList']~'"}'
+	</a>
+</article>
+<div class="material-popup-wrapper js--material-popup" id="material-popup-{$id}">
+	<div class="material-popup-box">
+		<div class="material-popup">
+			<h4 class="material-popup__title">Материалы</h4>
+			{if $id | resource : "serviceItem"}
+			<ul class="material-popup__content">
+				[[!displayMaterials? &materialId=`{$id}`]]
+			</ul>
+			{else}
+			<ul class="material-popup__content">
+				<li class="material-popup__item">
+					<h5 class="material-popup__material-title">Материалов нет</h5>
+				</li>
+			</ul>
+			{/if}
+			<h4 class="material-popup__title">Дополнительные материалы</h4>
+			{'!getImageList' | snippet : [
+				'tvname' => 'extraMaterial',
+				'tpl' => '@CODE: <li class="material-popup__item">
+													<h5 class="material-popup__material-title">[[+extraMaterial__name]]</h5>
+													<a href="[[+extraMaterial__material]]" class="material-popup__download-btn" target="_blank" rel="noopener nofollow">
+														Скачать
+														<svg class="material-popup__download-icon" width="42" height="8">
+															<use xlink:href="#icon-arrow-long"></use>
+														</svg>
+													</a>
+												</li>',
+				'docid' => ''~$id~'',
+				'limit' => '999',
+				'toPlaceholder' => 'extra-materials',
 			]}
-    {/if}
+			{if $_modx->getPlaceholder('materials-plc')}
+			<ul class="material-popup__content">
+				{$_modx->getPlaceholder('materials-plc')}
+			</ul>
+    	{else}
+			<ul class="material-popup__content">
+				<li class="material-popup__item">
+					<h5 class="material-popup__material-title">Дополнительных материалов нет</h5>
+				</li>
+			</ul>
+			{/if}
 		</div>
-		<a data-fancybox href="#material-box-{$id}" class="main-btn pa-line-card__watch-btn">Смотреть</a>
-		{if $_pls['tv.specialistList'] != '-- Выберите специалиста --'}
-			<a href="https://wa.me/{'!pdoResources' | snippet : [
-																'parents' => '142',
-																'includeTVs' => 'specialist_phone',
-																'tpl' => '@INLINE: 	[[+tv.specialist_phone]]',
-																'limit' => '1',
-																'where' => '{"pagetitle":"'~$_pls['tv.specialistList']~'"}'
-														]}
-			" class="left-menu__header-text pa-line-card__watch-btn" style="display: block; margin-top: 15px; color: #f4656d;" target="_blank">Связаться со специалистом</a>
-		{/if}
-
-		{if $id | resource : "quiz"}
-		<quiz
-			:default-quiz='{$id | resource : "quiz"}'
-			:id='{$id}'
-			user-name='[[+modx.user.id:userinfo=`fullname`]]'
-			user-email='[[+modx.user.id:userinfo=`email`]]'
-			material='{$pagetitle}'
-		></quiz>
-		{/if}
-		
 	</div>
-</div>
-<div style="display: none;" class="extra-material-popup" id="extra-material-content-{$id}">
-	<p class="extra-material-popup__title">Дополнительные материалы</p>
-	{'!getImageList' | snippet : [
-		'tvname' => 'extraMaterial',
-		'tpl' => '@CODE: <a href="[[+extraMaterial__material]]" class="extra-material-popup__url" target="_blank">[[+extraMaterial__name]]</a>',
-		'docid' => ''~$id~'',
-		'limit' => '999',
-	]}
-	{if $_modx->getPlaceholder('total') == 0}
-	<script>
-		document.querySelector("[data-src='#extra-material-content-{$id}']").style.display = "none";
-	</script>
-	{/if}
 </div>

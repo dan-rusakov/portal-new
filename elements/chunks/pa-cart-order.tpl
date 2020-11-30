@@ -6,10 +6,8 @@
 						class="form-control{($field in list $errors) ? ' error' : ''}">
 	{/foreach}
 
-	{foreach $payments as $payment index=$index}
-		{var $checked = !($order.payment in keys $payments) && $index == 0 || $payment.id == $order.payment}
-		<input type="hidden" name="payment" value="3" id="payment_3"{$checked ? 'checked' : ''}>
-	{/foreach}
+	<input type="hidden" name="payment" value="3" id="payment_3" checked class="js--sber-payment">
+	<input type="hidden" name="payment" value="1" id="payment_3" class="js--no-payment">
 
 	{foreach $deliveries as $delivery index=$index}
 		{var $checked = !($order.delivery in keys $deliveries) && $index == 0 || $delivery.id == $order.delivery}
@@ -18,15 +16,15 @@
 						{$checked ? 'checked' : ''}>
 	{/foreach}
 
-	<div class="pa-content-box__footer pa-content-box__footer--mb grid">
-    <input type="text" name="promocode" placeholder="Промокод" class="pa-content-box__promocode-input main-form__input email-delivery__input" id="promocode-input">
-    <button type="button" class="main-btn pa-content-box__btn ms2_link" id="submit-promocode-btn">Применить</button>
-  </div>
-	<div class="pa-content-box__footer grid">
-    <p class="pa-content-box__footer-price" id="order-price">Сумма заказа: <span id="ms2_order_cost">{$order.cost ?: 0}</span>{'ms2_frontend_currency' | lexicon}</p>
-    <button type="submit" name="ms2_action" value="order/submit" class="main-btn pa-content-box__btn ms2_link">Оплатить</button>
-  </div>
-
+	<div class="profile-cart__promo-code-box">
+		<input type="text" name="promocode" class="profile-cart__promo-code-input pa-content-box__promocode-input main-form__input email-delivery__input" placeholder="Промокод" id="promocode-input">
+		<button class="profile-cart__promo-code-btn main-btn pa-content-box__btn ms2_link" type="button" id="submit-promocode-btn">Применить</button>
+	</div>
+	<div class="profile-cart__submit-box">
+		<p class="profile-cart__total-price" id="order-price">Сумма заказа: <span id="ms2_order_cost">{$order.cost ?: 0}</span>{'ms2_frontend_currency' | lexicon}</p>
+		<button class="profile-cart__confirm-btn ms2_link js--no-payment-btn" type="submit" name="ms2_action" value="order/submit">Подтвердить</button>
+		<button class="profile-cart__buy-btn ms2_link js--sber-payment-btn" type="submit" name="ms2_action" value="order/submit">Оплатить сейчас</button>
+	</div>
 </form>
 
 <script>
@@ -55,5 +53,23 @@
 				}
 			})
 	});
+})();
+// смена типа оплаты
+(function() {
+	const sberPayment = document.querySelector('.js--sber-payment');
+	const sberPaymentBtn = document.querySelector('.js--sber-payment-btn');
+	const noPayment = document.querySelector('.js--no-payment');
+	const noPaymentBtn = document.querySelector('.js--no-payment-btn');
+
+	sberPaymentBtn.addEventListener('click', () => {
+		sberPayment.checked = true;
+		noPayment.checked = false;
+	});
+
+	noPaymentBtn.addEventListener('click', () => {
+		sberPayment.checked = false;
+		noPayment.checked = true;
+	});
+	
 })();
 </script>

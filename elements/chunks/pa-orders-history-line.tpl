@@ -1,35 +1,26 @@
 {foreach $orders as $order}
 {foreach $order.products as $product}
-<div class="pa-thin-line grid">
-	<div class="pa-thin-line__img-box">
-		<img src="{$product.data_thumb}" alt="" class="pa-thin-line__img">
+<article class="product-card product-card--not-hover">
+	<div class="product-card__url">
+		<div class="product-card__img-box">
+			<div class="product-card__img-wrap">
+				<img src="{$product.data_thumb}" alt="" class="product-card__img">
+			</div>
+		</div>
+		<div class="product-card__text-box">
+			<time class="product-card__date">{$order.createdon | date_format: '%d %B %Y'}</time>
+			<h4 class="product-card__title">{$product.name}</h4>			
+			{if $order.status_name == 'Не обработан'}
+			<p class="product-card__status" style="color: #979797;">Не обработан</p>
+			{elseif $order.status_name == 'Обработан'}
+			<p class="product-card__status" style="color: #FF9F00;">Обработан</p>
+			{elseif $order.status_name == 'Оплачен'}
+			<p class="product-card__status" style="color: #2D8984;">Оплачен</p>
+			{elseif $order.status_name == 'Завершен'}
+			<p class="product-card__status" style="color: #33312D;">Оплачен</p>
+			{/if}
+		</div>
 	</div>
-	<p class="pa-thin-line__title">{$product.name}</p>
-	<div class="pa-thin-line__date-box">
-		<i class="pa-thin-line__date-icon icon-form-calendar"></i>
-		<p class="pa-thin-line__date">{$order.createdon | date_format: '%d %B %Y'}</p>
-	</div>
-	{if $order.status_name == 'Не обработан'}
-	<div class="pa-thin-line__status-box pa-thin-line_gray">
-		<i class="pa-thin-line__status-icon icon-clock"></i>
-		<p class="pa-thin-line__status">{$order.status_name}</p>
-	</div>
-	{elseif $order.status_name == 'Обработан'}
-	<div class="pa-thin-line__status-box pa-thin-line_yellow">
-		<i class="pa-thin-line__status-icon icon-round-dollar"></i>
-		<p class="pa-thin-line__status">{$order.status_name}</p>
-	</div>
-	{elseif $order.status_name == 'Оплачен'}
-	<div class="pa-thin-line__status-box pa-thin-line_green">
-		<i class="pa-thin-line__status-icon icon-shield-ok"></i>
-		<p class="pa-thin-line__status">{$order.status_name}</p>
-	</div>
-	{elseif $order.status_name == 'Завершен'}
-	<div class="pa-thin-line__status-box pa-thin-line_black">
-		<i class="pa-thin-line__status-icon icon-lock-ok"></i>
-		<p class="pa-thin-line__status">{$order.status_name}</p>
-	</div>
-	{/if}
-</div>
+</article>
 {/foreach}
 {/foreach}

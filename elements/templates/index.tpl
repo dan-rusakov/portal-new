@@ -1,114 +1,164 @@
 {extends 'file:templates/layout.tpl'}
 
 {block 'main'}
-<section class="page-banner" style="background-image: url({$_modx->resource.headerCourseBg | replace : " " : "%20"});">
-	<div class="container grid">
-		<p class="page-banner__subtitle">[[+tv.serviceTopic]]</p>
-		<p class="page-banner__title">{$_modx->resource.headerCourse}</p>
-		<div class="page-banner__btn-inner">
-			<a href="{$_modx->makeUrl('!getPageIdByTitle' | snippet : ['pagetitle' => $_modx->resource.headerCourse])}" class="main-btn page-banner__btn">Хочу посмотреть{$id}</a>
-			<a href="{$_modx->makeUrl(17)}" class="sec-btn page-banner__btn">Другие материалы</a>
+<section class="welcome-section" style="background-image: url({$_modx->resource.headerCourseBg | replace : " " : "%20"})">
+	<video autoplay muted loop width="100%" height="100%" class="welcome-section__video" pip="false">
+		<source src="assets/materials/main-page-video.mp4" type="video/mp4">
+	</video>
+</section>
+<section class="categories main-page__categories">
+	<div class="categories__inner">
+		<h3 class="categories__title">Наши направления:</h3>
+		<ul class="categories__list">
+			{'!mFilter2' | snippet : [
+				'parents' => '6,145', 
+				'limit' => '100',
+				'tpl' => '',
+				'tplOuter' => '@INLINE: [[+filters]]',
+				'tplFilter.outer.default' => '@INLINE: [[+rows]]',
+				'tplFilter.row.default' => 'categories-list',
+				'element' => 'msProducts',
+				'tvPrefix' => 'tv.',
+				'filters' => 'msoption|services_radio',
+				'sort' => 'tv|dateServicePage'
+			]}
+		</ul>
+	</div>
+</section>
+<section class="courses">
+	<div class="courses__inner">
+		<header class="courses__header">
+			<h2 class="courses__title">Курсы</h2>
+			<a href="{$_modx->makeUrl(6)}" class="courses__page-url">
+				Все курсы
+				<svg class="courses__page-url-icon" width="42" height="8">
+					<use xlink:href="#icon-arrow-long"></use>
+				</svg>
+			</a>
+		</header>
+		<div class="courses__courses-box">
+			{'!msProducts' | snippet : [
+				'parents' => '6,145',
+				'tpl' => 'timetable-box',
+				'includeTVs' => 'dateServicePage, specialistList',
+				'tvPrefix' => 'tv.',
+				'limit' => '6'
+				'optionFilters' => '{"glav:=":"Да"}',
+			]}
 		</div>
 	</div>
 </section>
-<section class="should-read">
-    <div class="container grid">
-        <h2 class="should-read__title section-title">Рекомендуем почитать</h2>
-        {'!pdoPage' | snippet : [
-            'parents' => '9', 
-            'limit' => '4',
-            'tpl' => 'preview-card-grid',
-            'includeTVs' => 'articleTopic, serviceImg'
-        ]}
-        <a href="{$_modx->makeUrl(9)}" class="should-read__btn more-btn">Показать больше статей</a>
-    </div>
-</section>
-
-<section class="timetable">
-	<div class="container">
-		<h2 class="section-title timetable__title">Свежее раписание</h2>
-	</div>
-	<div class="owl-carousel timetable-carousel">
-		{'!msProducts' | snippet : [
-			'parents' => '6',
-			'tpl' => 'timetable-box',
-			'includeTVs' => 'dateServicePage, specialistList',
-			'tvPrefix' => 'tv.',
-			'limit' => '6'
-			'optionFilters' => '{"glav:=":"Да"}',
-    ]}
-	</div>
-	<div class="container grid">
-		<a href="{$_modx->makeUrl(19)}" class="timetable__btn more-btn">Показать все события</a>
-	</div>
-</section>
-<section class="notes">
-    <div class="container grid">
-        <h2 class="section-title notes__title">Заметки и статьи наших специалистов</h2>
-        {'!pdoResources' | snippet : [
-            'parents' => '9', 
-            'limit' => '4',
-            'tpl' => 'blog-preview-card',
-            'includeTVs' => 'authorsList',
-            'tvPrefix' => 'tv.',
-        ]}
-        <a href="{$_modx->makeUrl(9)}" class="more-btn notes__btn">Показать больше статей</a>
-    </div>
-</section>
-<section class="partners">
-	<div class="container">
-		<h2 class="section-title partners__title">Наши партнёры</h2>
-	</div>
-	<div class="owl-carousel partners-carousel">
-		[[!getImageList?
-			&tvname=`ourPartners`
-			&tpl=`partners-box`
-			&docid=`[[*id]]`
-			&limit=`999`
-		]]
+<section class="education-stages">
+	<div class="education-stages__inner">
+		<header class="education-stages__header">
+			<h2 class="education-stages__title">Системный подход к образованию</h2>
+			<a href="{$_modx->makeUrl(16)}" class="education-stages__page-url">
+				Подробнее об обучении
+				<svg class="education-stages__page-url-icon" width="42" height="8">
+					<use xlink:href="#icon-arrow-long"></use>
+				</svg>
+			</a>
+		</header>
+		<div class="education-stages__stages-box">
+			<div class="education-stages__stage">
+				<img
+					src="assets/img/education-stages-img1.svg"
+					alt="Видеолекции"
+					class="education-stages__stage-img"
+					width="278"
+					height="278"
+				>
+				<p class="education-stages__stage-name">Видеолекции</p>
+			</div>
+			<div class="education-stages__stage">
+				<img
+					src="assets/img/education-stages-img2.svg"
+					alt="Практика"
+					class="education-stages__stage-img"
+					width="278"
+					height="278"
+				>
+				<p class="education-stages__stage-name">Практика</p>
+			</div>
+			<div class="education-stages__stage">
+				<img
+					src="assets/img/education-stages-img3.svg"
+					alt="Консультации"
+					class="education-stages__stage-img"
+					width="278"
+					height="278"
+				>
+				<p class="education-stages__stage-name">Консультации</p>
+			</div>
+			<div class="education-stages__stage">
+				<img
+					src="assets/img/education-stages-img4.svg"
+					alt="Диплом"
+					class="education-stages__stage-img"
+					width="278"
+					height="278"
+				>
+				<p class="education-stages__stage-name">Диплом</p>
+			</div>
+		</div>
 	</div>
 </section>
-
-<section class="email-delivery">
-	<div class="container grid">
-		<h2 class="email-delivery__title section-title">Подпишитесь на нашу рассылку интересных событий:</h2>
-		<p class="email-delivery__subtitle">В ней анонсы курсов, расписание вебинаров, новости о распродажах и акциях. Присоединяйтесь!</p>
-		<form class="main-form email-delivery__form grid">
-			<label for="" class="main-form__input-inner email-delivery__input-inner">
-				<i class="icon-form-email"></i>
-				<input type="text" class="main-form__input email-delivery__input" placeholder="Email">
-			</label>
-			<input type="submit" value="Подписаться" class="main-btn email-delivery__btn">
-			<p class="main-form__personal-data email-delivery__personal-data">Нажимая на кнопку, я даю согласие на обработку моих <a href="#" class="main-form__personal-data-link email-delivery__personal-data-link">персональных данных</a></p>
-		</form>
-		
+<section class="reviews">
+	<div class="reviews__inner">
+		<h2 class="reviews__title">Отзывы</h2>
+		<div class="reviews__reviews-box">
+			[[!getImageList?
+				&tvname=`center_reviews`
+				&tpl=`center_review`
+				&docid=`15`
+				&limit=`999`
+			]]
+		</div>
 	</div>
-	<a href="http://class.tolimantsentr.ru/">Старая версия сайта</a>
 </section>
-{/block}
-{block 'child-skills-popup'}
-<div class="child-skills-popup" id="child-skills-popup" style="display: none; width: 100%">
-	<p class="child-skills-popup__title">Определим предрасположенность вашего ребёнка</p>
-	<form class="main-form child-skills-popup__form grid">
-		<label for="" class="main-form__input-inner child-skills-popup__input-inner">
-			<i class="icon-form-name"></i>
-			<input type="text" class="main-form__input child-skills-popup__input" placeholder="Имя">
-		</label>
-		<label for="" class="main-form__input-inner child-skills-popup__input-inner">
-			<i class="icon-form-calendar"></i>
-			<input type="text" class="main-form__input child-skills-popup__input" placeholder="Дата рождения ребенка">
-		</label>
-		<label for="" class="main-form__input-inner child-skills-popup__input-inner">
-			<i class="icon-form-email"></i>
-			<input type="text" class="main-form__input child-skills-popup__input" placeholder="Email">
-		</label>
-		<label for="" class="main-form__input-inner child-skills-popup__input-inner">
-			<i class="icon-form-phone"></i>
-			<input type="text" class="main-form__input child-skills-popup__input" placeholder="Телефон">
-		</label>
-		<input type="submit" value="Узнать" data-popup="#child-skills-popup" class="main-btn child-skills-popup__btn">
-		<p class="main-form__personal-data child-skills-popup__personal-data">Нажимая на кнопку, я даю согласие на обработку моих <a href="[[~175]]" class="main-form__personal-data-link">персональных данных</a></p>
-	</form>
-	
-</div>
+<section class="callback-section main-page__callback-section">
+	<div class="callback-section__inner">
+		<div class="callback-section__card">
+			<div class="callback-section__text-box">
+				<h2 class="callback-section__title">Поможем выбрать</h2>
+				<p class="callback-section__description">
+					Если у вас есть вопросы о формате или вы не знаете что выбрать, оставьте свой номер: мы позвоним, чтобы ответить на все ваши вопросы.
+				</p>
+			</div>
+			<form action="#!" method="post" class="callback-section__form js--callback-form">
+				<input type="text" name="name" class="text-input callback-section__input" placeholder="Имя">
+				<input type="text" name="phone" class="text-input callback-section__input" placeholder="Телефон">
+				<input type="text" name="email" class="text-input callback-section__input" placeholder="Почта">
+				<label class="callback-section__checkbox-label">
+					<input type="checkbox" class="callback-section__checkbox-input visually-hidden js--callback-licence-agreement">
+					<span class="callback-section__checkbox"></span>
+					<p class="callback-section__licence-text">
+						Я согласен с условиями обработки <a href="#!" class="callback-section__licence-url" target="_blank">персональных данных</a>
+					</p>
+				</label>
+				<button class="callback-section__submit-btn js--callback-sumbit-btn" type="submit" disabled>Отправить</button>
+			</form>
+		</div>
+	</div>
+</section>
+<section class="articles-section">
+	<div class="articles-section__inner">
+		<h2 class="articles-section__title">Заметки и статьи наших специалистов</h2>
+		<div class="articles-section__articles-box">
+			{'!pdoResources' | snippet : [
+				'parents' => '9', 
+				'limit' => '4',
+				'tpl' => 'blog-preview-card',
+				'includeTVs' => 'authorsList',
+				'tvPrefix' => 'tv.',
+			]}
+		</div>
+		<a href="{$_modx->makeUrl(9)}" class="articles-section__page-url">
+			Больше статей
+			<svg class="articles-section__page-url-icon" width="42" height="8">
+				<use xlink:href="#icon-arrow-long"></use>
+			</svg>
+		</a>
+	</div>
+</section>
 {/block}
