@@ -1,43 +1,39 @@
 {extends 'file:templates/layout.tpl'}
  
 {block 'main'}
-{'page-banner' | chunk : ['pSubtitle' => 'Блог', 'pTitle' => $_modx->resource.pTitle, 'pBg' => $_modx->resource.pBg]}
-<section class="blog">
-    <div class="container grid">
-        <div class="blog__content-left">
-            <div class="filter blog__filter">
-                <div class="filter__header grid">
-                    <p class="filter__title">Фильтры</p>
-                    <i class="icon-filter filter__icon"></i>
-                    <i class="icon-bold-arrow-down filter__arrow"></i>
-                </div>
-                <div class="filter__content">
-                    <ul class="filter__menu">                      
-                        <li class="filter__text active" data-val="all">все</li>
-                        {'!getTvValue' | snippet : ['tvId' => '1']}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="blog__content-right">
-            <div id="pdopage" class="grid">
-            <div class="rows grid filtered-item-container">
-                {'!ajaxFilter' | snippet}
-                {'!pdoPage@AjaxPaginator' | snippet : [
-                    'parents' => $_modx->resource.id, 
-                    'limit' => '8',
-                    'tpl' => 'preview-card-grid',
-                    'includeTVs' => 'articleTopic, serviceImg',
-                    'ajaxMode' => 'button',
-                    'ajaxElemMore' => '#pdopage .more-btn',
-                    'ajaxTplMore' => '@INLINE <button class="blog__btn more-btn">Показать больше статей</button>',
-                    'processTVs' => '1'
-                ]}
-            </div>
-            {$_modx->getPlaceholder('page.nav')}
-            </div>            
-        </div>
-    </div>
+{'page-banner' | chunk : ['pBg' => $_modx->resource.pBg]}
+<section class="articles">
+	<div class="articles__inner">
+		<h1 class="articles__title">Статьи</h1>
+	</div>
+	<div class="categories__inner">
+		<h3 class="categories__title">Наши направления:</h3>
+		<ul class="categories__list">
+			<li class="categories__item" data-val="all">
+				<button type="button" class="categories__url active" style="border-color: #5F5BAB;">
+					Все
+					<span class="categories__bg" style="background-color: #5F5BAB;"></span>
+				</button>
+			</li>
+			{'!getTvValue' | snippet : ['tvId' => '1']}
+		</ul>
+	</div>
+	<div id="pdopage">
+		<div class="articles__content-inner rows">
+			{'!ajaxFilter' | snippet}
+			{'!pdoPage@AjaxPaginator' | snippet : [
+				'parents' => $_modx->resource.id, 
+				'limit' => '8',
+				'tpl' => 'preview-card-grid',
+				'includeTVs' => 'articleTopic, serviceImg',
+				'ajaxMode' => 'button',
+				'ajaxElemMore' => '#pdopage .js--load-btn',
+				'ajaxTplMore' => '@INLINE <div class="articles__content-inner"><button class="articles__load-btn js--load-btn">Показать больше статей</button></div>',
+				'processTVs' => '1'
+			]}
+		</div>
+		{$_modx->getPlaceholder('page.nav')}
+	</div>
 </section>
 {/block} 
 
@@ -51,8 +47,8 @@ $(document).ready(function() {
 
     if(filterValGet[1]){
 
-        $('.filter__text').removeClass('active');
-        $('.filter__text[data-val='+ decodeURIComponent(filterValGet[1]) +']').addClass('active');
+        $('.categories__url').removeClass('active');
+        $('.categories__url[data-val='+ decodeURIComponent(filterValGet[1]) +']').addClass('active');
         window.location.hash = '';
 
         if (typeof(pdoPage) == 'undefined') return;
@@ -78,9 +74,9 @@ $(document).ready(function() {
 
     };
 
-	$(document).on('click', '.filter__text', function(){
+	$(document).on('click', '.categories__url', function(){
 
-        $('.filter__text').removeClass('active');
+        $('.categories__url').removeClass('active');
         $(this).addClass('active');
 		// Проверяем, что pdoPage подключён
 		if (typeof(pdoPage) == 'undefined') return;
@@ -104,10 +100,10 @@ $(document).ready(function() {
 	});
 
 	$(document).on('pdopage_load', function(e, config, response) {
-		if(response.pages < 2 || response.pages == response.page){
-			$('.blog__btn').css('display', 'none');
+		if (response.pages === response.page){
+			$('.js--load-btn').css('display', 'none');
 		} else {
-			$('.blog__btn').css('display', 'inline-block');
+			$('.js--load-btn').css('display', 'inline-block');
 		}
 	});
 
