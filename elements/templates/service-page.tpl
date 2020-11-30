@@ -296,7 +296,7 @@
 			id: '{$_modx->resource.id}',
 			options: JSON.parse(document.querySelector('input[name="options"]').value),
 		};
-		document.cookie = "unknownOrder=" + JSON.stringify(product) + ';domain=.a0216921.xsph.ru;path=/';
+		document.cookie = "unknownOrder=" + JSON.stringify(product) + ';domain=.tolimantsentr.ru;path=/';
 	});
 })();
 {/if}
