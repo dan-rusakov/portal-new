@@ -48,7 +48,7 @@
 					<i class="icon-form-phone"></i>
 					<input type="text" class="main-form__input child-skills__input" placeholder="Телефон">
 				</label>
-				<p class="main-form__personal-data child-skills__personal-data">Нажимая на кнопку, я даю согласие на обработку моих <a href="#" class="main-form__personal-data-link child-skills__personal-data-link">персональных данных</a></p>
+				<p class="main-form__personal-data child-skills__personal-data">Нажимая на кнопку, я даю согласие на обработку моих <a href="{$_modx->makeUrl(175)}" class="main-form__personal-data-link child-skills__personal-data-link">персональных данных</a></p>
 				<input type="submit" value="Узнать" class="main-btn child-skills__btn">
 				<button data-popup="#child-skills-popup" id="child-skills__btn" class="main-btn child-skills__btn child-skills__btn_mobile">Узнать</button>
 			</form>

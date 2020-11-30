@@ -133,7 +133,7 @@
 					<input type="checkbox" class="callback-section__checkbox-input visually-hidden js--callback-licence-agreement">
 					<span class="callback-section__checkbox"></span>
 					<p class="callback-section__licence-text">
-						Я согласен с условиями обработки <a href="#!" class="callback-section__licence-url" target="_blank">персональных данных</a>
+						Я согласен с условиями обработки <a href="{$_modx->makeUrl(175)}" class="callback-section__licence-url" target="_blank">персональных данных</a>
 					</p>
 				</label>
 				<button class="callback-section__submit-btn js--callback-sumbit-btn" type="submit" disabled>Отправить</button>
