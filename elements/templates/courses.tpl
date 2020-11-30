@@ -25,7 +25,7 @@
 		'filters' => 'msoption|services_radio', 
 	]}
 </section>
-<section class="callback-section main-page__callback-section">
+<section class="callback-section">
 	<div class="callback-section__inner">
 		<div class="callback-section__card">
 			<div class="callback-section__text-box">
