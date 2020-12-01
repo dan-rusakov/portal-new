@@ -166,6 +166,33 @@
 		'where' => '{"pagetitle:=":"'~$_modx->resource.specialistList~'"}',
 	]} 
 {/if}
+<section class="course-teacher">
+	<div class="course-teacher__inner">
+		<h2 class="course-teacher__title">Преподаватели</h2>
+		<div class="authors-section__authors-box">
+			{'msProducts' | snippet : [
+				'parents' => '142',
+				'tpl' => '@INLINE: <article class="author-card">
+														<a href="[[~[[+id]]]]" class="author-card__url">
+															<div class="author-card__img-box">
+																<img src="assets/content-img/[[+tv.specialistFullImg]]" alt="" class="author-card__img">
+															</div>
+															<div class="author-card__text-box">
+																<b class="author-card__name">[[+pagetitle]]</b>
+																<p class="author-card__text">
+																	[[+introtext]]
+																</p>
+															</div>
+														</a>
+													</article>',
+				'includeTVs' => 'specialistFullImg',
+				'tvPrefix' => 'tv.',
+				'limit' => '999',
+				'where' => '{"id:IN":['~$_modx->resource.course_specialists~']}',
+			]}
+		</div>  
+	</div> 
+</section>
 {/block}
 {block 'blog-scripts'}
 <script>
