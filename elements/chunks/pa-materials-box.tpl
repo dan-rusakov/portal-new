@@ -47,9 +47,9 @@
 				'limit' => '999',
 				'toPlaceholder' => 'extra-materials',
 			]}
-			{if $_modx->getPlaceholder('materials-plc')}
+			{if $_modx->getPlaceholder('extra-materials')}
 			<ul class="material-popup__content">
-				{$_modx->getPlaceholder('materials-plc')}
+				{$_modx->getPlaceholder('extra-materials')}
 			</ul>
     	{else}
 			<ul class="material-popup__content">

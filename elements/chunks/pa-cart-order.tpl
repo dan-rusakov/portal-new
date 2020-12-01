@@ -6,8 +6,8 @@
 						class="form-control{($field in list $errors) ? ' error' : ''}">
 	{/foreach}
 
-	<input type="hidden" name="payment" value="3" id="payment_3" checked class="js--sber-payment">
-	<input type="hidden" name="payment" value="1" id="payment_3" class="js--no-payment">
+	<input type="radio" name="payment" value="3" id="payment_3" checked class="js--sber-payment" style="display: none;">
+	<input type="radio" name="payment" value="1" id="payment_3" class="js--no-payment" style="display: none;">
 
 	{foreach $deliveries as $delivery index=$index}
 		{var $checked = !($order.delivery in keys $deliveries) && $index == 0 || $delivery.id == $order.delivery}
@@ -22,8 +22,9 @@
 	</div>
 	<div class="profile-cart__submit-box">
 		<p class="profile-cart__total-price" id="order-price">Сумма заказа: <span id="ms2_order_cost">{$order.cost ?: 0}</span>{'ms2_frontend_currency' | lexicon}</p>
-		<button class="profile-cart__confirm-btn ms2_link js--no-payment-btn" type="submit" name="ms2_action" value="order/submit">Подтвердить</button>
-		<button class="profile-cart__buy-btn ms2_link js--sber-payment-btn" type="submit" name="ms2_action" value="order/submit">Оплатить сейчас</button>
+		<button class="ms2_link js--submit-btn" type="submit" name="ms2_action" value="order/submit" style="display: none;">Подтвердить</button>
+		<button class="profile-cart__confirm-btn js--no-payment-btn" type="button">Подтвердить</button>
+		<button class="profile-cart__buy-btn js--sber-payment-btn" type="button">Оплатить сейчас</button>
 	</div>
 </form>
 
@@ -60,15 +61,18 @@
 	const sberPaymentBtn = document.querySelector('.js--sber-payment-btn');
 	const noPayment = document.querySelector('.js--no-payment');
 	const noPaymentBtn = document.querySelector('.js--no-payment-btn');
+	const submitBtn = document.querySelector('.js--submit-btn');
 
 	sberPaymentBtn.addEventListener('click', () => {
 		sberPayment.checked = true;
 		noPayment.checked = false;
+		submitBtn.click();
 	});
 
 	noPaymentBtn.addEventListener('click', () => {
 		sberPayment.checked = false;
 		noPayment.checked = true;
+		submitBtn.click();
 	});
 	
 })();

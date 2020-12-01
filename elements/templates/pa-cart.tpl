@@ -4,5 +4,5 @@
 [[!promocode_handler]]
 [[!msCart?tpl=`pa-cart-card`]]
 [[!msOrder? &tpl=`pa-cart-order`]]
-[[!msGetOrder]]
+[[!msGetOrder? &tpl=`pa-get-order`]]
 {/block}
