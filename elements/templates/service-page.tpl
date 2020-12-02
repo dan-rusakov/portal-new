@@ -25,7 +25,7 @@
 					<input type="hidden" name="options" value="[]">
 					<div class="course-big-card__buy-line">
 						<strong class="course-big-card__price">{if $price}{$price} Р{/if}</strong>
-						<button class="course-big-card__buy-btn" type="submit" name="ms2_action" value="cart/add">Записаться</button>
+						<button class="course-big-card__buy-btn" type="submit" name="ms2_action" value="cart/add" id="buyProductBtn">Записаться</button>
 					</div>
 				</form>
 				{else}
@@ -294,15 +294,17 @@
 		});
 	}
 })();
+{if $_modx->isAuthenticated()} 
+(function() {
+	const buyBtn = document.querySelector('#buyProductBtn');
 
-
-
-
-
-
-
-
-
+	buyBtn.addEventListener('click', function() {
+		setTimeout(() => {
+			window.location.href = '{$_modx->makeUrl(99)}';
+		}, 1000);
+	});
+})();
+{/if}
 
 {if !$_modx->isAuthenticated()} 
 (function() {
