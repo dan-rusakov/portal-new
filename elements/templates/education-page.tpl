@@ -153,19 +153,12 @@
 					&limit=`999`
 				]]
 			</ul>
+			<p class="course-program__description">
+				[[+introtext]]
+			</p>
 		</article>
 	</div>
 </section>
-{if $_modx->resource.specialistList != '-- Выберите специалиста --'}  
-	{'msProducts' | snippet : [
-		'parents' => '142',
-		'tpl' => 'author-card',
-		'includeTVs' => 'specialistFullImg',
-		'tvPrefix' => 'tv.',
-		'limit' => '1',
-		'where' => '{"pagetitle:=":"'~$_modx->resource.specialistList~'"}',
-	]} 
-{/if}
 <section class="course-teacher">
 	<div class="course-teacher__inner">
 		<h2 class="course-teacher__title">Преподаватели</h2>
