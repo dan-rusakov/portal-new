@@ -9,7 +9,7 @@
 	<title>[[*pagetitle]]</title>
 	<meta name="description" content="[[*meta_description]]">
 	<meta name="keywords" content="">
-	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.16">
+	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.17">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<base href="/">
 	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">

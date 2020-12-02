@@ -4,7 +4,7 @@
 		<h2 class="profile-materials__subtitle">Ваша корзина пуста</h2>
 		<div class="profile-cart__submit-box">
 				<p class="profile-cart__total-price">Сумма заказа: 0 руб.</p>
-				<button class="profile-cart__confirm-btn" type="button">Подтвердить</button>
+				<button class="profile-cart__confirm-btn" type="button">Оставить заявку</button>
 				<button class="profile-cart__buy-btn" type="button">Оплатить сейчас</button>
 		</div>
 	{else}

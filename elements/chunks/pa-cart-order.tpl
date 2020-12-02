@@ -23,7 +23,7 @@
 	<div class="profile-cart__submit-box">
 		<p class="profile-cart__total-price" id="order-price">Сумма заказа: <span id="ms2_order_cost">{$order.cost ?: 0}</span>{'ms2_frontend_currency' | lexicon}</p>
 		<button class="ms2_link js--submit-btn" type="submit" name="ms2_action" value="order/submit" style="display: none;">Подтвердить</button>
-		<button class="profile-cart__confirm-btn js--no-payment-btn" type="button">Подтвердить</button>
+		<button class="profile-cart__confirm-btn js--no-payment-btn" type="button">Оставить заявку</button>
 		<button class="profile-cart__buy-btn js--sber-payment-btn" type="button">Оплатить сейчас</button>
 	</div>
 </form>
