@@ -10,7 +10,7 @@
 		'tplFilter.outer.default' => 'service-filter',
 		'tplFilter.row.default' => 'service-filter-item',
 		'element' => 'msProducts',
-		'includeTVs' => 'serviceTopic, serviceImg, servicePrice, eventsTopic, dateServicePage, locationServicePage, specialistList, specialistProfession',
+		'includeTVs' => 'serviceTopic, serviceImg, servicePrice, eventsTopic, dateServicePage, locationServicePage, specialistList, specialistProfession, course_specialists',
 		'tvPrefix' => 'tv.',
 		'tplPage' => '@INLINE <li class="pagination__item"><a href="{$href}" class="pagination__item-link">{$pageNo}</a></li>',
 		'tplPageActive' => '@INLINE <li class="pagination__item active"><a href="{$href}" class="pagination__item-link">{$pageNo}</a></li>',

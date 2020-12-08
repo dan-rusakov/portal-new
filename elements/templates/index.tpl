@@ -40,7 +40,7 @@
 			{'!msProducts' | snippet : [
 				'parents' => '6,145',
 				'tpl' => 'timetable-box',
-				'includeTVs' => 'dateServicePage, specialistList',
+				'includeTVs' => 'dateServicePage, specialistList, course_specialists',
 				'tvPrefix' => 'tv.',
 				'limit' => '6'
 				'optionFilters' => '{"glav:=":"Да"}',
