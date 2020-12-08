@@ -22,3 +22,25 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px 20px;
 }
+
+@include tablet-lg {
+  .reviews__title {
+    font-size: 32px;
+  }
+}
+
+@include tablet-lg {
+  .reviews__reviews-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include tablet-md {
+  .reviews__reviews-box {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews__title {
+    margin-bottom: 20px;
+  }
+}

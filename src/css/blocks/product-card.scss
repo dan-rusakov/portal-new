@@ -85,3 +85,21 @@
   font-weight: $bold;
   transition: .25s color ease;
 }
+
+@include tablet-lg {
+  .product-card__url {
+    flex-direction: column;
+  }
+
+  .product-card__img-box {
+    margin-right: 0;
+    margin-bottom: 35px;
+    width: 100%;
+  }
+}
+
+@include phone-lg {
+  .product-card__url {
+    padding: 25px;
+  }
+}

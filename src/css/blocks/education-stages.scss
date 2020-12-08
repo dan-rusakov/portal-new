@@ -35,6 +35,7 @@
   border-bottom: 1px solid $brand-color;
   position: relative;
   margin-right: 54px;
+  flex-shrink: 0;
 }
 
 .education-stages__page-url-icon {
@@ -70,4 +71,49 @@
   color: $text-color;
   font-weight: $regular;
   margin: 0;
+}
+
+@include screen-sm {
+  .education-stages__stages-box {
+    grid-gap: 40px;
+  }
+}
+
+@include tablet-lg {
+  .education-stages__title {
+    font-size: 32px;
+  }
+
+  .education-stages__header {
+    margin-bottom: 30px;
+  }
+}
+
+@include tablet-md {
+  .education-stages__stages-box {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .education-stages__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-stages__title {
+    margin-bottom: 20px;
+  }
+}
+
+@include phone-lg {
+  .education-stages__stages-box {
+    grid-template-columns: 1fr;
+  }
+
+  .education-stages__title {
+    font-size: 26px;
+  }
+
+  .education-stages__stage-img {
+    margin-bottom: 20px;
+  }
 }

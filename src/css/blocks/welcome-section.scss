@@ -1,5 +1,5 @@
 .welcome-section {
-  height: 650px;
+  padding-bottom: 34%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -7,4 +7,10 @@
 
 .welcome-section__video {
   object-fit: cover;
+}
+
+@include tablet-md {
+  .welcome-section {
+    padding-bottom: 50%;
+  }
 }

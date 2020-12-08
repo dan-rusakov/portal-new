@@ -72,3 +72,17 @@
   border: 1px solid $text-color;
   border-radius: 50px;
 }
+
+@include phone-lg {
+  .author-article__article-name {
+    margin-left: 0;
+  }
+
+  .author-article__description {
+    margin-left: 0;
+  }
+
+  .author-article__url {
+    padding: 25px;
+  }
+}

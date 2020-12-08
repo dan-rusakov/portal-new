@@ -120,3 +120,44 @@
   background-color: $brand-color;
   justify-self: flex-start;
 }
+
+@include tablet-lg {
+  .callback-section__card {
+    padding: 50px;
+    grid-template-columns: 1fr;
+  }
+
+  .callback-section__text-box {
+    margin-bottom: 30px;
+  }
+}
+
+@include tablet-md {
+  .callback-section__form {
+    grid-template-columns: 1fr;
+  }
+
+  .callback-section__input:first-child {
+    grid-column: 1/2;
+  }
+}
+
+@include phone-lg {
+  .callback-section__title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .callback-section__card {
+    padding: 30px;
+    border-radius: 0;
+  }
+
+  .callback-section__inner {
+    padding: 0;
+  }
+
+  .callback-section__description {
+    font-size: 16px;
+  }
+}

@@ -51,3 +51,34 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 20px;
 }
+
+@include tablet-lg {
+  .courses__courses-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .courses__title {
+    font-size: 32px;
+  }
+}
+
+@include tablet-md {
+  .courses__courses-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include tablet-sm {
+  .courses__courses-box {
+    grid-template-columns: 1fr;
+  }
+
+  .courses__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .courses__title {
+    margin-bottom: 20px;
+  }
+}

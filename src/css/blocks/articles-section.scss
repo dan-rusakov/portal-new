@@ -44,3 +44,26 @@
   fill: $purple;
   vertical-align: middle;
 }
+
+@include tablet-lg {
+  .articles-section__title {
+    font-size: 32px;
+  }
+}
+
+@include tablet-md {
+  .articles-section__articles-box {
+    grid-template-columns: 1fr;
+  }
+
+  .articles-section__title {
+    margin-bottom: 30px;
+  }
+}
+
+@include phone-lg {
+  .articles-section__title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
