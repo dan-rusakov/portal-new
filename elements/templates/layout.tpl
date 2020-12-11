@@ -9,7 +9,7 @@
 	<title>[[*pagetitle]]</title>
 	<meta name="description" content="[[*meta_description]]">
 	<meta name="keywords" content="">
-	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.18">
+	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.19">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<base href="/">
 	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
@@ -70,6 +70,36 @@
 				</button>
 			{/if}
 		</nav>
+		<button class="header__burger js--burger-btn" aria-label="Открыть меню" type="button">
+			<span class="header__burger-line"></span>
+		</button>
+	</div>
+	<div class="header__mobile-menu-box js--burger-menu">
+		<ul class="header__mobile-menu">
+			<li class="header__mobile-menu-item">
+				<a href="{$_modx->makeUrl(16)}" class="header__mobile-menu-url">О проекте</a>
+			</li>
+			<li class="header__mobile-menu-item">
+				<a href="{$_modx->makeUrl(9)}" class="header__mobile-menu-url">Статьи</a>
+			</li>
+			<li class="header__mobile-menu-item">
+				<a href="{$_modx->makeUrl(21)}" class="header__mobile-menu-url">Контакты</a>
+			</li>
+			<li class="header__mobile-menu-item">
+				{if $_modx->isAuthenticated()}
+					<a href="{$_modx->makeUrl(99)}" class="header__mobile-menu-btn js--auth-popup-btn">
+						<div class="header__profile-img-box">
+								<img src="[[+modx.user.id:userinfo=`photo`:default=`assets/img/default-img.jpg?s=100`]]" alt="" class="header__profile-img">
+						</div>
+						<span class="header__user-name">{$_modx->user.id | userinfo: 'fullname'}</span>
+					</a>
+				{else}
+					<button class="header__mobile-menu-btn js--auth-popup-btn">
+						Войти
+					</button>
+				{/if}
+			</li>
+		</ul>
 	</div>
 </header>
 
@@ -170,7 +200,7 @@
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ea935c89-e746-4efb-8860-b16da130ea77&lang=ru_RU" type="text/javascript"></script>
 <script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/bundle.min.js?v=1.0.8"></script>
+<script src="/assets/js/bundle.min.js?v=1.0.9"></script>
 {block 'child-skills-popup'}{/block}
 {block 'blog-scripts'}{/block}
 

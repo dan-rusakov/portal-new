@@ -8,7 +8,7 @@
 	<title>[[*pagetitle]]</title>
 	<meta name="description" content="[[*meta_description]]">
 	<meta name="keywords" content="">
-	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.6">
+	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.7">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<base href="/">
 	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
@@ -202,7 +202,7 @@
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ea935c89-e746-4efb-8860-b16da130ea77&lang=ru_RU" type="text/javascript"></script>
 <script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/bundle.min.js?v=1.0.5"></script>
+<script src="/assets/js/bundle.min.js?v=1.0.6"></script>
 {block 'scripts'}{/block}
 
 <svg style="display: none;">

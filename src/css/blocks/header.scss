@@ -277,6 +277,10 @@
   .header__login-btn {
     display: none;
   }
+
+  .header__profile-btn {
+    display: none;
+  }
 }
 
 @include tablet-sm {
