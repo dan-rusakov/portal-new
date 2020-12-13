@@ -9,7 +9,7 @@
 	<title>[[*pagetitle]]</title>
 	<meta name="description" content="[[*meta_description]]">
 	<meta name="keywords" content="">
-	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.19">
+	<link rel="stylesheet" href="/assets/css/main.min.css?v=1.0.20">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<base href="/">
 	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
@@ -99,6 +99,26 @@
 					</button>
 				{/if}
 			</li>
+			{if $_modx->isAuthenticated()}
+				<li class="header__mobile-menu-item">
+					<a href="{$_modx->makeUrl(99)}" class="header__mobile-menu-url">Корзина</a>
+				</li>
+				<li class="header__mobile-menu-item">
+					<a href="{$_modx->makeUrl(100)}" class="header__mobile-menu-url">Мое обучение</a>
+				</li>
+				<li class="header__mobile-menu-item">
+					<a href="{$_modx->makeUrl(101)}" class="header__mobile-menu-url">Доступные материалы</a>
+				</li>
+				<li class="header__mobile-menu-item">
+					<a href="{$_modx->makeUrl(102)}" class="header__mobile-menu-url">История заказов</a>
+				</li>
+				<li class="header__mobile-menu-item">
+					<a href="{$_modx->makeUrl(104)}" class="header__mobile-menu-url">Настройки</a>
+				</li>
+				<li class="header__mobile-menu-item">
+					<a href="{$_modx->makeUrl(1)}?action=auth/logout" class="header__mobile-menu-url">Выход</a>
+				</li>
+			{/if}
 		</ul>
 	</div>
 </header>
@@ -200,7 +220,7 @@
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ea935c89-e746-4efb-8860-b16da130ea77&lang=ru_RU" type="text/javascript"></script>
 <script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/bundle.min.js?v=1.0.9"></script>
+<script src="/assets/js/bundle.min.js?v=1.0.10"></script>
 {block 'child-skills-popup'}{/block}
 {block 'blog-scripts'}{/block}
 
