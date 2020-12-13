@@ -76,3 +76,9 @@
     display: none;
   }
 }
+
+@include tablet-sm {
+  .profile__inner {
+    padding-top: 40px;
+  }
+}
