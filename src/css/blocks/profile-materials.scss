@@ -76,3 +76,36 @@
   fill: $brand-color;
   vertical-align: middle;
 }
+
+@include tablet-lg {
+  .profile-materials__title {
+    font-size: 42px;
+  }
+
+  .profile-materials__subtitle {
+    font-size: 30px;
+  }
+}
+
+@include tablet-md {
+  .profile-materials {
+    margin-bottom: 80px;
+  }
+}
+
+@include tablet-sm {
+  .profile-materials {
+    margin-bottom: 60px;
+  }
+}
+
+@include phone-lg {
+  .profile-materials__title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .profile-materials__subtitle {
+    font-size: 24px;
+  }
+}

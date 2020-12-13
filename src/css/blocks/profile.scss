@@ -70,3 +70,9 @@
 .profile__content {
   width: 100%;
 }
+
+@include screen-sm {
+  .profile__aside {
+    display: none;
+  }
+}
