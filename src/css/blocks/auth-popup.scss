@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  padding: 0 20px;
   background-color: #f3f3f6;
   display: flex;
   justify-content: center;
@@ -130,4 +131,50 @@
   color: $purple;
   font-weight: $extra-bold;
   margin: 0 0 0 8px;
+}
+
+@include tablet-md {
+  .auth-popup {
+    padding: 0 30px;
+  }
+}
+
+@include tablet-sm {
+  .auth-popup__login-form {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-popup__description {
+    grid-column: 1/2;
+  }
+
+  .auth-popup__header-btn {
+    font-size: 20px;
+  }
+
+  .auth-popup__registration-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include phone-sm {
+  .auth-popup__header-btn {
+    font-size: 17px;
+  }
+
+  .auth-popup__header {
+    margin-bottom: 10px;
+  }
+
+  .auth-popup__footer {
+    margin-top: 30px;
+  }
+
+  .auth-popup__submit-btn {
+    font-size: 14px;
+  }
+
+  .auth-popup {
+    padding: 0 20px;
+  }
 }
