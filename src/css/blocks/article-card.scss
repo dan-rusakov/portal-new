@@ -36,3 +36,9 @@
   font-weight: $regular;
   margin: 0;
 }
+
+@include phone-lg {
+  .article-card__url {
+    padding: 30px;
+  }
+}

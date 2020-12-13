@@ -102,3 +102,23 @@
     }
   }
 }
+
+@include tablet-lg {
+  .text-constructor {
+    h1 {
+      font-size: 36px;
+    }
+  }
+}
+
+@include tablet-sm {
+  .text-constructor {
+    h1 {
+      font-size: 28px;
+    }
+
+    h2, h3, h4, h5, h6 {
+      font-size: 18px;
+    }
+  }
+}

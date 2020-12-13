@@ -49,3 +49,65 @@
   display: block;
   fill: #96C4C1;
 }
+
+@include screen-md {
+  .certificates__gallery {
+    padding: 0 80px;
+  }
+
+  .certificates__gallery-btn {
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  .certificates__gallery .swiper-container {
+    height: auto;
+  }
+}
+
+@include tablet-md {
+  .certificates__title {
+    font-size: 32px;
+  }
+}
+
+@include tablet-sm {
+  .certificates__gallery {
+    padding: 0;
+    margin-bottom: 35px;
+  }
+
+  .certificates__gallery-btn {
+    top: auto;
+    bottom: -10px;
+    transform: translateY(100%);
+
+    &--next {
+      right: 50px;
+      transform: translateY(100%) rotate(180deg);
+    }
+
+    &--prev {
+      left: 50px;
+    }
+  }
+
+  .certificates__img {
+    width: 100%;
+  }
+
+  .certificates {
+    padding: 50px 0;
+  }
+}
+
+@include phone-lg {
+  .certificates__title {
+    font-size: 28px;
+  }
+}

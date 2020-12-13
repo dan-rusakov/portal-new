@@ -16,3 +16,29 @@
 .about__callback-section {
   margin-bottom: 70px;
 }
+
+@include tablet-md {
+  .about__card {
+    padding: 40px;
+  }
+
+  .about {
+    margin: 60px 0 100px;
+  }
+}
+
+@include phone-lg {
+  .about__card {
+    padding: 30px;
+  }
+
+  .about {
+    margin: 40px 0 70px;
+  }
+}
+
+@include phone-sm {
+  .about__card {
+    padding: 20px;
+  }
+}
