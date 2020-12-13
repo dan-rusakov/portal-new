@@ -22,3 +22,21 @@
     margin-bottom: 0;
   }
 }
+
+@include tablet-md {
+  .modules-section__title {
+    font-size: 42px;
+  }
+}
+
+@include tablet-sm {
+  .modules-section__title {
+    font-size: 38px;
+  }
+}
+
+@include phone-lg {
+  .modules-section__title {
+    font-size: 28px;
+  }
+}

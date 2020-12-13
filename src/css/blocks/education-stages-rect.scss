@@ -9,3 +9,29 @@
   grid-gap: 20px 20px;
   align-items: stretch;
 }
+
+@include tablet-lg {
+  .education-stages-rect__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include tablet-md {
+  .education-stages-rect__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .education-stages-rect {
+    margin-bottom: 80px;
+  }
+}
+
+@include tablet-sm {
+  .education-stages-rect__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .education-stages-rect {
+    margin-bottom: 60px;
+  }
+}

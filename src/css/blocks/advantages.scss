@@ -21,3 +21,43 @@
   display: flex;
   width: 100%;
 }
+
+@include tablet-lg {
+  .advantages__content-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+}
+
+@include tablet-md {
+  .advantages__content-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .advantages__title {
+    font-size: 42px;
+    margin-bottom: 50px;
+  }
+}
+
+@include tablet-sm {
+  .advantages__content-box {
+    grid-template-columns: 1fr;
+  }
+
+  .advantages__title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .advantages {
+    margin-bottom: 60px;
+  }
+}
+
+@include phone-lg {
+  .advantages__title {
+    font-size: 28px;
+  }
+}

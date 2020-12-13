@@ -80,3 +80,64 @@
   background-color: $white;
   transition: .25s background-color ease;
 }
+
+@include tablet-lg {
+  .module {
+    padding: 40px;
+  }
+
+  .module__title {
+    font-size: 28px;
+  }
+
+  .module__price {
+    font-size: 32px;
+  }
+
+  .module__text-box {
+    margin-right: 40px;
+  }
+}
+
+@include tablet-md {
+  .module {
+    flex-direction: column;
+  }
+
+  .module__text-box {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .module__action-box {
+    margin-left: 0;
+  }
+
+  .module__price {
+    text-align: left;
+  }
+
+  .module__checkbox-label {
+    justify-content: flex-start;
+  }
+}
+
+@include tablet-sm {
+  .module__title {
+    font-size: 24px;
+  }
+
+  .module__price {
+    font-size: 26px;
+  }
+}
+
+@include phone-lg {
+  .module {
+    padding: 30px;
+  }
+
+  .module__title {
+    font-size: 20px;
+  }
+}

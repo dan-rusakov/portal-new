@@ -26,6 +26,7 @@
   border-radius: 40px;
   position: relative;
   margin-left: auto;
+  flex-shrink: 0;
 
   &.active {
     background-color: $purple;
@@ -63,5 +64,27 @@
   &.active {
     height: auto;
     overflow: visible;
+  }
+}
+
+@include tablet-lg {
+  .program-module__name {
+    font-size: 26px;
+  }
+
+  .program-module__text {
+    font-size: 16px;
+  }
+}
+
+@include tablet-sm {
+  .program-module__name {
+    font-size: 22px;
+  }
+}
+
+@include phone-lg {
+  .program-module__name {
+    font-size: 18px;
   }
 }

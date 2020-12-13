@@ -26,3 +26,9 @@
   color: $text-color;
   font-weight: $regular;
 }
+
+@include tablet-lg {
+  .advantage-card {
+    margin-right: 0;
+  }
+}

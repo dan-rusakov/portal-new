@@ -84,3 +84,71 @@
   color: $text-color;
   font-weight: $regular;
 }
+
+@include tablet-lg {
+  .course-program__title {
+    font-size: 42px;
+  }
+
+  .course-program__stat-box {
+    width: 50%;
+  }
+
+  .course-program__card {
+    padding: 40px;
+  }
+}
+
+@include tablet-md {
+  .course-program__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-program__title {
+    margin-bottom: 30px;
+  }
+
+  .course-program__stat-box {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@include tablet-sm {
+  .course-program__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .course-program__stat-number {
+    font-size: 42px;
+  }
+
+  .course-program__description {
+    font-size: 16px;
+  }
+
+  .course-program {
+    margin-bottom: 60px;
+  }
+}
+
+@include phone-lg {
+  .course-program__title {
+    font-size: 26px;
+  }
+
+  .course-program__stat-text {
+    font-size: 16px;
+  }
+
+  .course-program__stat-number {
+    font-size: 36px;
+    margin-right: 10px;
+  }
+
+  .course-program__card {
+    padding: 30px;
+  }
+}
