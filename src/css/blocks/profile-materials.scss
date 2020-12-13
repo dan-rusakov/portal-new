@@ -97,6 +97,10 @@
   .profile-materials {
     margin-bottom: 60px;
   }
+
+  .profile-materials__materials-box {
+    grid-template-columns: 1fr;
+  }
 }
 
 @include phone-lg {
