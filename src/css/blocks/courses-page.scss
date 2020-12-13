@@ -113,3 +113,34 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 20px;
 }
+
+@include tablet-lg {
+  .courses-page__content {
+    flex-direction: column;
+  }
+
+  .courses-page__aside {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+}
+
+@include tablet-md {
+  .courses-page__courses-box {
+    grid-template-columns: 1fr;
+  }
+
+  .courses-page__title {
+    font-size: 42px;
+  }
+
+  .courses-page {
+    margin-bottom: 80px;
+  }
+}
+
+@include tablet-sm {
+  .courses-page {
+    margin-bottom: 60px;
+  }
+}
