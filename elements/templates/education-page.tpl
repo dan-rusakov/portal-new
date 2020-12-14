@@ -146,7 +146,7 @@
 													</button>
 												</header>
 												<section class="program-module__content js--program-module-content">
-													<p class="program-module__text">[[+course_program_text]]</p>
+													<div class="program-module__text text-constructor">[[+course_program_text]]</div>
 												</section>
 											</li>`
 					&docid=`[[*id]]`
