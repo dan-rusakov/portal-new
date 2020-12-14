@@ -77,6 +77,9 @@
 	<div class="header__mobile-menu-box js--burger-menu">
 		<ul class="header__mobile-menu">
 			<li class="header__mobile-menu-item">
+				<a href="{$_modx->makeUrl(6)}" class="header__mobile-menu-url">Все курсы</a>
+			</li>
+			<li class="header__mobile-menu-item">
 				<a href="{$_modx->makeUrl(16)}" class="header__mobile-menu-url">О проекте</a>
 			</li>
 			<li class="header__mobile-menu-item">
